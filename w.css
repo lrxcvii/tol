@@ -1,4 +1,3 @@
-
 /* ============ RESET ANTI-SKIN ============ */
 #lu div, #lu span, #lu p, #lu ul, #lu li, #lu img, #lu a {
   background: none;
@@ -6,6 +5,7 @@
   border-radius: 0 !important;
   box-shadow: none !important;
   text-indent: 0 !important;
+  text-shadow: none;
 }
 
 /* ============ TOKENS ============ */
@@ -17,7 +17,6 @@
   text-transform: inherit !important;
   font-style: inherit !important;
   font-weight: inherit !important;
-  color: inherit;
   float: none !important;
   max-width: none !important;
   --bg: #000000;
@@ -27,26 +26,19 @@
   box-sizing: border-box !important;
 }
 
+/* ============ SHELL ============ */
 #lu {
-  font-size: 9px !important;
-  line-height: 13px !important;
+  width: 680px !important;
+  height: auto !important;
+  margin: 60px auto !important;
+  background-color: var(--bg) !important;
+  color: var(--ink) !important;
+  font-size: 10px !important;
+  line-height: 14px !important;
   letter-spacing: 0.02em !important;
   text-transform: none !important;
   font-style: normal !important;
   font-weight: 400 !important;
-}
-
-/* ============ SHELL ============ */
-#lu {
-  width: 680px !important;
-  height: 700px !important;
-  margin: 60px auto !important;
-  background-color: var(--bg) !important;
-  color: var(--ink) !important;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-size: 9px !important;
-  line-height: 13px !important;
-  letter-spacing: 0.02em !important;
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
@@ -59,11 +51,13 @@
 #lu p {
   margin: 0 !important;
   text-align: justify !important;
-  hyphens: auto !important;
+  hyphens: none !important;
+  text-wrap: pretty !important;
   white-space: pre-line !important;
+  color: var(--ink) !important;
 }
 
-#lu b { color: var(--pink) !important; font-weight: 700 !important; font-style: italic !important; font-size: inherit !important; }
+#lu b { color: var(--pink) !important; font-weight: 700 !important; font-style: italic !important; }
 #lu i { color: var(--pink) !important; font-style: italic !important; }
 #lu u { text-decoration: underline !important; text-decoration-color: var(--pink) !important; text-decoration-thickness: 1px !important; text-underline-offset: 2px !important; }
 #lu a { color: var(--ink) !important; text-decoration: underline !important; text-underline-offset: 2px !important; }
@@ -78,7 +72,7 @@
   padding: 0 14px !important;
 }
 
-#lu .lu-dash { display: block !important; flex: 1 !important; height: 0 !important; border-top: 0px dashed var(--pink-dim) !important;PADDING: 10PX !important; }
+#lu .lu-dash { display: block !important; flex: 1 !important; height: 0 !important; border-top: 0px dashed var(--pink-dim) !important; padding: 10px !important; }
 
 /* ============ CABECERA ============ */
 #lu .lu-tp {
@@ -92,7 +86,7 @@
 
 #lu .lu-sp { display: block !important; }
 
-#lu .lu-head { display: flex !important; flex-direction: column !important; gap: 6px !important; }
+#lu .lu-head { display: flex !important; flex-direction: column !important; gap: 6px !important; align-items: flex-start !important; }
 
 #lu .lu-hero {
   display: block !important;
@@ -102,8 +96,7 @@
   object-position: right center !important;
 }
 
-#lu .lu-tp .lu-h1 {
-  align-self: flex-start !important;
+#lu .lu-h1 {
   margin: 0 !important;
   display: inline-block !important;
   align-self: flex-start !important;
@@ -116,7 +109,16 @@
   padding: 0 8px 2px !important;
 }
 
-#lu .lu-meta { font-size: 8px !important; line-height: 11px !important; letter-spacing: 0.04em !important; text-align: justify !important; hyphens: auto !important; width: 200px !important;}
+#lu .lu-meta {
+  font-size: 8px !important;
+  line-height: 12px !important;
+  letter-spacing: 2px !important;
+  text-align: left !important;
+  hyphens: none !important;
+  width: 340px !important;
+  text-transform: uppercase !important;
+  font-style: italic !important;
+}
 
 /* ============ CUERPO ============ */
 #lu .lu-body {
@@ -144,7 +146,9 @@
   gap: 12px !important;
 }
 
-#lu .lu-side .lu-h2 {
+#lu .lu-sec { display: block !important; }
+
+#lu .lu-h2 {
   margin: 0 0 4px !important;
   display: inline-block !important;
   align-self: flex-start !important;
@@ -158,7 +162,6 @@
 }
 
 #lu .lu-stats {
-  list-style: none !important;
   margin: 6px 0 0 !important;
   padding: 0 0 0 8px !important;
   list-style: none !important;
@@ -167,25 +170,26 @@
   gap: 5px !important;
 }
 
-#lu .lu-stats .lu-li {
+#lu .lu-li {
   display: grid !important;
   grid-template-columns: 12px minmax(0, 1fr) !important;
   gap: 6px !important;
   text-align: justify !important;
-  hyphens: auto !important;
+  hyphens: none !important;
+  list-style: none !important;
 }
 
 #lu .lu-mk {
   display: block !important;
   height: 11px !important;
-  background-color: var(--pink) !important;
-  color: var(--bg) !important;
-  font-size: 8px !important;
+  background-color: transparent !important;
+  color: var(--pink) !important;
+  font-size: 25px !important;
   line-height: 11px !important;
   text-align: center !important;
 }
 
-/* ---- tags: negro con borde rosa + hover lento ---- */
+/* ---- tags ---- */
 #lu .lu-tags { display: flex !important; flex-wrap: wrap !important; gap: 4px !important; margin-top: 6px !important; }
 
 #lu .lu-tags span {
@@ -208,7 +212,7 @@
   color: var(--bg) !important;
 }
 
-/* ---- columna derecha (scroll) ---- */
+/* ---- columna derecha ---- */
 #lu .lu-main {
   min-height: 0 !important;
   overflow-y: auto !important;
@@ -294,7 +298,7 @@
 #lu .lu-img:hover img { filter: grayscale(100%) contrast(110%) brightness(115%) !important; }
 #lu .lu-img:hover::after { opacity: 1 !important; }
 
-/* recuadro central: justificado y con scroll propio */
+/* recuadro central */
 #lu .lu-txt {
   max-height: 150px !important;
   overflow-y: auto !important;
@@ -304,7 +308,7 @@
   padding-right: 2px !important;
 }
 
-#lu .lu-txt .lu-h3 {
+#lu .lu-h3 {
   margin: 0 !important;
   display: flex !important;
   align-items: center !important;
@@ -318,7 +322,7 @@
 
 #lu .lu-txt .lu-ast { color: var(--pink) !important; font-size: 11px !important; }
 
-#lu .lu-txt .lu-lbl, #lu .lu-txt .lu-h3 a {
+#lu .lu-lbl, #lu .lu-h3 a {
   color: var(--pink) !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
@@ -328,14 +332,12 @@
   transition: color 0.5s ease, text-shadow 0.5s ease !important;
 }
 
-#lu .lu-txt .lu-h3 a:hover {
+#lu .lu-h3 a:hover {
   color: #ffffff !important;
   text-shadow: 0 0 6px var(--pink), 0 0 14px var(--pink) !important;
 }
 
 /* ---- estado: disponible / reservada / ocupada ---- */
-
-
 #lu .lu-st {
   margin-left: auto !important;
   display: inline-flex !important;
@@ -353,6 +355,8 @@
   transition: gap 0.5s ease !important;
 }
 
+#lu .lu-st .lu-sym { font-size: 8px !important; line-height: 12px !important; }
+
 #lu .lu-st .lu-lb {
   max-width: 0 !important;
   overflow: hidden !important;
@@ -364,24 +368,9 @@
 #lu .lu-st:hover { gap: 4px !important; }
 #lu .lu-st:hover .lu-lb { max-width: 90px !important; opacity: 1 !important; }
 
-#lu .lu-ok, #lu .lu-d { color: #b9e3b5 !important; }
-#lu .lu-mid, #lu .lu-r { color: #f0c79a !important; }
-#lu .lu-no, #lu .lu-o { color: #e58b8b !important; }
-
-#lu .lu-verse {
-  margin: 0 0 3px !important;
-  font-size: 14px !important;
-  line-height: 16px !important;
-  letter-spacing: 0.02em !important;
-  text-transform: uppercase !important;
-  text-align: left !important;
-}
-
-#lu .lu-verse .lu-qt { color: var(--pink) !important; font-size: 16px !important; }
-#lu .lu-verse em { color: var(--pink) !important; font-style: italic !important; font-weight: 700 !important; }
-
-#lu .lu-sec { display: block !important; }
-#lu .lu-st .lu-sym { font-size: 8px !important; line-height: 12px !important; }
+#lu .lu-d { color: #b9e3b5 !important; }
+#lu .lu-r { color: #f0c79a !important; }
+#lu .lu-o { color: #e58b8b !important; }
 
 /* ============ PIE ============ */
 #lu .lu-btm {
