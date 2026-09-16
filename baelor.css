@@ -1,0 +1,260 @@
+@import url("https://use.typekit.net/rur2uxf.css");
+
+@font-face {
+  font-family: 'StellaMystica';
+  src: url('https://cdn.jsdelivr.net/gh/lrxcvii/tol@main/GL_StellaMystica.otf') format('opentype');
+  font-display: swap;
+}
+
+/* ============ RESET ANTI-SKIN ============ */
+#lp div, #lp span, #lp p, #lp img {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-indent: 0;
+  text-shadow: none;
+}
+
+#lp, #lp * {
+  font-family: "meno-banner", serif;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  float: none !important;
+  max-width: none !important;
+  box-sizing: border-box;
+  --stone: #17120f;
+  --ink: #e4d8c7;
+  --bone: #cbb699;
+  --edge: #8f7c64;
+  --blood: #c9564a;
+}
+
+#lp ::-webkit-scrollbar { width: 0; height: 0; }
+
+/* ============ SHELL ============ */
+#lp {
+  position: relative;
+  width: 650px;
+  height: 756px;
+  margin: 50px auto;
+  padding: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0.3px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: none;
+  overflow: hidden;
+}
+
+/* ============ TÍTULO VERTICAL (detrás) ============ */
+#lp .lp-h1 {
+  position: absolute;
+  bottom: 20px;
+  left: 54px;
+  z-index: 1;
+  font-family: 'StellaMystica', serif;
+  font-size: 120px;
+  line-height: 106px;
+  letter-spacing: -4px;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--edge);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  filter: drop-shadow(1.5px 1.5px 0 #000000) drop-shadow(2.5px 2.5px 0 #000000) drop-shadow(0 0 9px #8f7c6459);
+}
+
+/* ============ PUERTA GÓTICA ============ */
+#lp .lp-stone {
+  position: absolute;
+  top: 38px;
+  left: 141px;
+  z-index: 2;
+  width: 400px;
+  height: 700px;
+  background-color: var(--stone);
+  background-image: radial-gradient(150% 55% at 50% 0%, #251c17 0%, var(--stone) 72%);
+  border: 1px solid var(--edge);
+  border-radius: 200px 200px 4px 4px;
+  overflow: hidden;
+}
+
+/* ---- encabezado fijo ---- */
+#lp .lp-head {
+  position: absolute;
+  top: 286px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 0 30px;
+}
+
+#lp .lp-quote {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-image: linear-gradient(100deg, #8a2f27 0%, #d38a80 48%, #a83a2e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+#lp .lp-div {
+  display: block;
+  height: 1px;
+  margin: 1px auto 0;
+  background-image: linear-gradient(90deg, #a83a2e00 0%, #a83a2e26 18%, #a83a2e 50%, #a83a2e26 82%, #a83a2e00 100%);
+  filter: blur(0.6px);
+}
+
+/* ---- texto con scroll (el formato se aplica al escribir, sin etiquetas) ---- */
+#lp .lp-scroll {
+  position: absolute;
+  top: 320px;
+  bottom: 34px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 0 30px;
+  text-align: justify;
+  hyphens: none;
+  text-wrap: pretty;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#lp .lp-scroll p { margin: 0 0 14px; }
+
+#lp .lp-orna {
+  display: block;
+  margin-top: 18px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 8px;
+  color: var(--edge);
+}
+
+#lp b { color: var(--blood); font-weight: 600; }
+#lp i { font-style: italic; }
+#lp u { text-decoration: underline; text-decoration-color: var(--blood); text-underline-offset: 3px; }
+#lp a { color: var(--bone); text-decoration: underline; text-decoration-color: var(--blood); text-underline-offset: 3px; transition: color 0.5s ease, text-shadow 0.5s ease; }
+#lp a:hover { color: var(--ink); text-shadow: 0 0 9px var(--blood); }
+
+/* ============ DRAGÓN DE FONDO ============ */
+#lp .lp-dragon {
+  position: absolute;
+  top: -30px;
+  left: -165px;
+  z-index: 1;
+  width: 385px;
+  opacity: 0.35;
+  filter: sepia(40%);
+  pointer-events: none;
+}
+
+/* ============ MARCO OVALADO ============ */
+#lp .lp-frame {
+  position: absolute;
+  top: 3px;
+  left: 324px;
+  z-index: 3;
+  width: 210px;
+  height: 315px;
+}
+
+#lp .lp-orn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  filter: contrast(103%) saturate(48%);
+  pointer-events: none;
+}
+
+#lp .lp-oval {
+  position: absolute;
+  top: 21%;
+  right: 17%;
+  bottom: 26.2%;
+  left: 17%;
+  background-color: #0c0a09;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#lp .lp-oval img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(75%) sepia(32%) contrast(112%) brightness(92%);
+  transition: filter 0.7s ease;
+}
+
+#lp .lp-frame:hover .lp-oval img { filter: grayscale(100%) sepia(100%) hue-rotate(-24deg) saturate(420%) brightness(32%) contrast(118%); }
+
+/* ---- ficha al hover ---- */
+#lp .lp-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  padding: 18px 14px;
+  text-align: center;
+  background-color: #3008068c;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+#lp .lp-frame:hover .lp-info { opacity: 1; }
+
+#lp .lp-name {
+  font-family: 'StellaMystica', serif;
+  font-size: 36px;
+  line-height: 24px;
+  letter-spacing: -1px;
+  color: var(--bone);
+  opacity: 0.7;
+  filter: drop-shadow(0 0 5px #e7d6ba8c);
+}
+
+#lp .lp-rule2 {
+  display: block;
+  width: 34px;
+  height: 0;
+  margin: 2px 0;
+  border-top: 1px solid #e8dccb8c;
+}
+
+#lp .lp-det {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 7.5px;
+  line-height: 12px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #e8dccb;
+}
