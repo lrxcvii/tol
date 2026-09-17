@@ -1,0 +1,623 @@
+
+@font-face {
+  font-family: 'StellaMystica';
+  src: url('https://cdn.jsdelivr.net/gh/lrxcvii/tol@main/GL_StellaMystica.otf') format('opentype');
+  font-display: swap;
+}
+
+/* ============================================================
+   TABLILLA DE POST 
+   ============================================================ */
+
+/* ---- reset anti-skin ---- */
+.lu-post div, .lu-post span, .lu-post p, .lu-post img {
+  background: none;
+  border: 0;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-indent: 0 !important;
+  text-shadow: none;
+}
+
+.lu-post, .lu-post * {
+  font-family: "meno-banner", serif !important;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  float: none !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+.lu-post ::-webkit-scrollbar { width: 0; height: 0; }
+
+/* ---- shell ---- */
+.lu-post {
+  --stone: #17120f;
+  --ink: #e4d8c7;
+  --bone: #cbb699;
+  --edge: #8f7c64;
+  --accent: #c9564a;
+  --g1: #8a2f27;
+  --g2: #d38a80;
+  --g3: #a83a2e;
+  --veil: #3008068c;
+  --hue: 0deg;
+  position: relative !important;
+  width: 650px !important;
+  height: 756px !important;
+  margin: 50px auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: var(--ink) !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  letter-spacing: 0.3px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  overflow: hidden !important;
+}
+
+/* ---- título vertical, detrás de la puerta ---- */
+.lu-post .lu-h1 {
+  position: absolute;
+  bottom: 20px;
+  z-index: 1;
+  font-family: 'StellaMystica', serif !important;
+  font-size: 120px !important;
+  line-height: 106px !important;
+  letter-spacing: -4px !important;
+  color: transparent !important;
+  -webkit-text-stroke: 1px var(--edge);
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  filter: drop-shadow(1.5px 1.5px 0 #000000) drop-shadow(2.5px 2.5px 0 #000000) drop-shadow(0 0 9px #8f7c6459);
+}
+
+/* ---- puerta gótica ---- */
+.lu-post .lu-stone {
+  position: absolute;
+  top: 38px;
+  z-index: 2;
+  width: 400px;
+  height: 700px;
+  background-color: var(--stone);
+  background-image: radial-gradient(150% 55% at 50% 0%, #251c17 0%, var(--stone) 72%);
+  border: 1px solid var(--edge);
+  border-radius: 200px 200px 4px 4px !important;
+  overflow: hidden;
+}
+
+/* ---- encabezado fijo ---- */
+.lu-post .lu-head {
+  position: absolute;
+  top: 286px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 0 30px !important;
+}
+
+.lu-post .lu-quote {
+  margin: 0 !important;
+  text-align: center !important;
+  font-size: 13px !important;
+  line-height: 17px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  background-image: linear-gradient(100deg, var(--g1) 0%, var(--g2) 48%, var(--g3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+}
+
+.lu-post .lu-div {
+  display: block;
+  height: 1px;
+  margin: 1px auto 0 !important;
+  background-image: linear-gradient(90deg, #00000000 0%, var(--accent) 50%, #00000000 100%);
+  opacity: 0.75;
+  filter: blur(0.6px);
+}
+
+/* ---- texto con scroll ---- */
+.lu-post .lu-scroll {
+  position: absolute;
+  top: 320px;
+  bottom: 34px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 0 30px !important;
+  text-align: justify !important;
+  font-size:15.5px;
+  letter-spacing:0.5px;
+  line-height:21px;
+  hyphens: none;
+  text-wrap: pretty;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.lu-post .lu-scroll p { margin: 0 0 14px !important; }
+
+.lu-post .lu-orna {
+  display: block;
+  margin-top: 18px !important;
+  text-align: center !important;
+  font-size: 11px !important;
+  letter-spacing: 8px !important;
+  color: var(--edge) !important;
+}
+
+.lu-post b { color: var(--accent) !important; font-weight: 600 !important; }
+.lu-post i { font-style: italic !important; }
+.lu-post u { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+.lu-post a { color: var(--bone) !important; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; transition: color 0.5s ease, text-shadow 0.5s ease; }
+.lu-post a:hover { color: var(--ink) !important; text-shadow: 0 0 9px var(--accent) !important; }
+
+/* ---- fondo ---- */
+.lu-post .lu-dragon {
+  position: absolute;
+  top: -30px;
+  z-index: 1;
+  width: 385px;
+  opacity: 0.35;
+  filter: sepia(40%);
+  pointer-events: none;
+}
+.lu-post .lu-torre {
+  position: absolute;
+  top: 40px;
+  right:-100px;
+  z-index: 1;
+  width: 385px;
+  opacity: 0.35;
+  filter: sepia(40%);
+  pointer-events: none;
+}
+
+/* ---- marco ovalado ---- */
+.lu-post .lu-frame {
+  position: absolute;
+  top: 3px;
+  z-index: 3;
+  width: 210px;
+  height: 315px;
+}
+
+.lu-post .lu-orn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  filter: contrast(103%) saturate(48%) brightness(0.7);
+  pointer-events: none;
+}
+
+.lu-post .lu-oval {
+  position: absolute;
+  top: 21%;
+  right: 17%;
+  bottom: 26.2%;
+  left: 17%;
+  background-color: #0c0a09;
+  border-radius: 50% !important;
+  overflow: hidden;
+}
+
+.lu-post .lu-oval img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(75%) sepia(32%) contrast(112%) brightness(92%);
+  transition: filter 0.7s ease;
+}
+
+.lu-post .lu-frame:hover .lu-oval img {
+  filter: grayscale(100%) sepia(100%) hue-rotate(var(--hue)) saturate(360%) brightness(33%) contrast(118%);
+}
+
+/* ---- ficha al hover ---- */
+.lu-post .lu-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  padding: 18px 14px !important;
+  text-align: center !important;
+  background-color: var(--veil);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+.lu-post .lu-frame:hover .lu-info { opacity: 1; }
+
+.lu-post .lu-name {
+  font-family: 'StellaMystica', serif !important;
+  font-size: 56px !important;
+  line-height: 24px !important;
+  letter-spacing: -4px !important;
+  color: var(--bone) !important;
+  opacity: 0.6;
+  filter: drop-shadow(1px 1px 3px #000000);
+}
+
+.lu-post .lu-rule {
+  display: block;
+  width: 34px;
+  height: 0;
+  margin: 2px 0 !important;
+  border-top: 1px solid #e8dccb8c;
+}
+
+.lu-post .lu-det {
+  margin: 0 !important;
+  font-family: "Courier New", Courier, monospace !important;
+  font-size: 9px !important;
+  line-height: 12px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: #e8dccb !important;
+}
+
+/* ============ VARIANTE B — imagen a la izquierda ============ */
+.lu-b .lu-h1 { left: 54px; transform: rotate(180deg); }
+.lu-b .lu-stone { left: 141px; }
+.lu-b .lu-frame { left: 324px; }
+.lu-b .lu-dragon { left: -165px; }
+
+/* ============ VARIANTE A — imagen a la derecha ============ */
+.lu-a .lu-h1 { right: 54px; }
+.lu-a .lu-stone { right: 141px; }
+.lu-a .lu-frame { left: 116px; }
+.lu-a .lu-dragon { right: -165px; transform: scaleX(-1); }
+
+/* ============================================================
+   TR — TABLA DE INTRODUCCION
+   ============================================================ */
+
+/* ---- reset anti-skin ---- */
+.tr-post div, .tr-post span, .tr-post p, .tr-post img, .tr-post h1, .tr-post a {
+  background: none;
+  border: 0;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-indent: 0 !important;
+  text-shadow: none;
+}
+
+.tr-post, .tr-post * {
+  font-family: "meno-banner", serif !important;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  float: none !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+.tr-post ::-webkit-scrollbar { width: 0; height: 0; }
+
+/* ---- shell ---- */
+.tr-post {
+  --tr-stone: #17120f;
+  --tr-ink: #e4d8c7;
+  --tr-bone: #cbb699;
+  --tr-edge: #8f7c64;
+  --tr-verde: #34592f;
+  --tr-rojo: #9E2E23;
+  position: relative !important;
+  width: 680px !important;
+  height: 800px !important;
+  margin: 50px auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: var(--tr-ink) !important;
+  font-size: 12.5px !important;
+  line-height: 18px !important;
+  letter-spacing: 0.3px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+}
+
+/* ---- caja interior (encaje con el marco) ---- */
+.tr-post .tr-caja {
+  position: absolute;
+  top: 66px;
+  right: 34px;
+  bottom: 58px;
+  left: 34px;
+  z-index: 1;
+  border-radius: 80px !important;
+  overflow: hidden;
+  background-color: var(--tr-stone) !important;
+  background-image: radial-gradient(120% 90% at 50% 0%, #251c17 0%, var(--tr-stone) 72%) !important;
+}
+
+/* ---- fotos laterales ---- */
+.tr-post .tr-foto {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 170px;
+  overflow: hidden;
+  background-color: #0c0a09 !important;
+}
+
+
+.tr-post .tr-foto-izq { left: 0; }
+.tr-post .tr-foto-der { right: 0; }
+
+.tr-post .tr-foto img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center center;
+  filter: grayscale(78%) sepia(30%) contrast(112%) brightness(88%);
+}
+/* ===== POSICION DE LAS IMAGENES ===== */
+
+.tr-post .tr-foto img.ali-cent {
+  object-position: 35% 50%;
+  transform: scaleX(-1);
+  filter: grayscale(78%) sepia(30%) contrast(150%) brightness(68%) !important;
+}
+
+.tr-post .tr-foto img.bae-lor {
+  object-position: 35% 50%;
+}
+
+/* ---- tinte en modo overlay sobre la foto ---- */
+.tr-post .tr-tint {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+
+.tr-post .tr-foto-izq .tr-tint { background-color: var(--tr-verde) !important; }
+.tr-post .tr-foto-der .tr-tint { background-color: var(--tr-rojo) !important; }
+
+/* ---- ficha al hover ---- */
+.tr-post .tr-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 24px 14px !important;
+  text-align: center !important;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+
+.tr-post .tr-foto-izq .tr-info { background-color: #0a1a0866 !important; }
+.tr-post .tr-foto-der .tr-info { background-color: #1a060466 !important; }
+
+.tr-post .tr-foto:hover .tr-tint, .tr-post .tr-foto:hover .tr-info { opacity: 1; }
+
+.tr-post .tr-name {
+  font-family: 'StellaMystica', serif !important;
+  font-size: 38px !important;
+  line-height: 23px !important;
+  letter-spacing: -1px !important;
+  color: var(--tr-ink) !important;
+  filter: drop-shadow(1px 1px 6px #000000) !important;
+}
+
+.tr-post .tr-rule {
+  display: block;
+  width: 30px;
+  height: 0;
+  margin: 4px 0 !important;
+  border-top: 1px solid #e8dccb8c !important;
+}
+
+.tr-post .tr-det {
+  margin: 0 !important;
+  font-family: "Courier New", Courier, monospace !important;
+  font-size: 7.5px !important;
+  line-height: 12px !important;
+  letter-spacing: 1.4px !important;
+  text-transform: uppercase !important;
+  color: #e8dccb !important;
+}
+
+/* ---- panel de texto superpuesto (pisa 5px cada foto) ---- */
+.tr-post .tr-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  width: 282px;
+  padding: 22px 16px 18px !important;
+  background-color: #17120fe6 !important;
+  background-image: radial-gradient(110% 80% at 50% 0%, #251c17f2 0%, #17120fee 74%) !important;
+  box-shadow: 0 0 34px 16px #17120fcc !important;
+}
+
+/* ---- titulo grande de contorno + frase encima ---- */
+.tr-post .tr-head {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.tr-post .tr-title {
+  position: absolute;
+  margin: 0 !important;
+  white-space: nowrap;
+  font-family: 'StellaMystica', serif !important;
+  font-size: 110px !important;
+  line-height: 88px !important;
+  letter-spacing: -6px !important;
+  font-weight: 400 !important;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--tr-bone);
+  opacity: 0.5;
+  filter: drop-shadow(1.5px 1.5px 0 #000000) drop-shadow(1px 2px 1px #000000) drop-shadow(0 0 14px #e4d8c766) drop-shadow(0 0 26px #cbb69959);
+}
+
+.tr-post .tr-frase {
+  position: relative !important;
+  z-index: 2;
+  width: 460px !important;
+  margin: -15px 0 0 -110px !important;
+  text-align: center !important;
+  font-size: 7px !important; line-height: 9px !important;
+  letter-spacing: 2.2px !important; text-transform: uppercase !important;
+  color: var(--tr-ink) !important;
+  opacity: 0.8 !important;
+  text-shadow: -18px 0 22px #17120f, 18px 0 22px #17120f, 0 0 10px #17120f !important;
+}
+
+.tr-post .tr-cap {
+  margin: 15px 0 0 !important;
+  text-align: center !important;
+  font-size: 10.5px !important;
+  line-height: 14px !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  background-image: linear-gradient(100deg, #8f7c64 0%, #e4d8c7 48%, #a08a6f 100%) !important;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent;
+}
+
+.tr-post .tr-div {
+  display: block;
+  flex: none;
+  width: 100%;
+  height: 1px;
+  margin: 8px 0 0 !important;
+  background-image: linear-gradient(90deg, #00000000 0%, var(--tr-bone) 50%, #00000000 100%) !important;
+  opacity: 0.75;
+  filter: blur(0.6px);
+}
+
+/* ---- cuerpo de texto con scroll ---- */
+.tr-post .tr-text {
+  flex: none;
+  height: 332px;
+  margin-top: 25px !important;
+  font-size:14px;
+  letter-spacing:0.5px;
+  line-height:19px;
+  margin-bottom: 25px !important;
+  padding: 0 2px !important;
+  text-align: justify !important;
+  hyphens: none;
+  text-wrap: pretty;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tr-post .tr-text p { margin: 0 0 11px !important; }
+
+.tr-post b { color: var(--tr-bone) !important; font-weight: 600 !important; }
+.tr-post i { font-style: italic !important; }
+.tr-post u { text-decoration: underline; text-decoration-color: var(--tr-bone); text-underline-offset: 3px; }
+.tr-post .tr-text a { color: var(--tr-ink) !important; text-decoration: underline; text-decoration-color: var(--tr-bone); text-underline-offset: 3px; transition: text-shadow 0.5s ease; }
+.tr-post .tr-text a:hover { text-shadow: 0 0 9px var(--tr-bone) !important; }
+
+/* ---- lista de capitulos 3 x 2 ---- */
+.tr-post .tr-caps-t {
+  flex: none;
+  margin: 8px 0 15px !important;
+  text-align: center !important;
+  font-size: 11px !important;
+  line-height: 12px !important;
+  letter-spacing: 4px !important;
+  text-transform: uppercase !important;
+  color: var(--tr-bone) !important;
+}
+
+.tr-post .tr-caps {
+  display: grid;
+  flex: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.tr-post .tr-caps a {
+  padding: 7px 0 6px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  font-family: "Courier New", Courier, monospace !important;
+  font-size: 8px !important;
+  line-height: 10px !important;
+  letter-spacing: 1.4px !important;
+  text-transform: uppercase !important;
+  color: var(--tr-bone) !important;
+  border: 1px solid #8f7c6459 !important;
+  background-color: #0c0a0999 !important;
+  transition: color 0.45s ease, border-color 0.45s ease, box-shadow 0.45s ease, transform 0.45s ease;
+}
+
+.tr-post .tr-caps a:hover {
+  color: var(--tr-ink) !important;
+  border-color: var(--tr-bone) !important;
+  box-shadow: 0 0 14px #cbb69959, inset 0 0 12px #cbb69921 !important;
+  transform: scale(1.06);
+}
+
+/* ---- marco ornamental por encima de todo ---- */
+.tr-post .tr-marco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1;
+  pointer-events: none;
+  filter: contrast(203%) saturate(28%) brightness(0.6);
+}
+
+
+
