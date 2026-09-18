@@ -155,8 +155,11 @@
   color: var(--edge) !important;
 }
 
-.lu-post b { color: var(--accent) !important; font-weight: 600 !important; }
-.lu-post i { font-style: italic !important; }
+.lu-post b, .lu-post strong { color: var(--accent) !important; font-weight: 600 !important; }
+.lu-post i, .lu-post em { font-style: italic !important; }
+
+.tr-post b, .tr-post strong { color: var(--tr-bone) !important; font-weight: 600 !important; }
+.tr-post i, .tr-post em { font-style: italic !important; }
 .lu-post u { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
 .lu-post a { color: var(--bone) !important; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; transition: color 0.5s ease, text-shadow 0.5s ease; }
 .lu-post a:hover { color: var(--ink) !important; text-shadow: 0 0 9px var(--accent) !important; }
