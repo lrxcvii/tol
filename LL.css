@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1 · INTRO
-   ========================================================================== */
+/* ---------- raiz --------- */
 .lu-lx {
   --lx-vio: #a878ff;
   position: relative; display: block;
@@ -11,6 +9,10 @@
   background: none !important;
 }
 .lu-lx .lx-stage { position: relative; }
+
+/* ==========================================================================
+   1 · PANTALLA DE LOGIN  (va en el flujo y colapsa a altura cero al acabar)
+   ========================================================================== */
 .lu-lx .lx-veil {
   position: relative; overflow: hidden; max-height: 1400px;
   padding: 0 0 16px !important; background: none !important;
@@ -364,6 +366,13 @@
   text-align: justify; hyphens: none; text-wrap: pretty;
 }
 
+/* ---------- scroll de la caja de texto (barra fina solo al hover) ---------- */
+.lu-lx .lx-body {
+  max-height: 350px; overflow-y: auto; padding-right: 8px !important;
+  scrollbar-width: none; scrollbar-color: var(--lx-vio, #a878ff) transparent;
+}
+
+
 /* ---------- fila inferior: capitulos + otros expedientes ---------- */
 .lu-lx .lx-bottom {
   display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; padding: 14px 0 0 !important;
@@ -558,8 +567,6 @@
 @keyframes lx-floatB { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
 @keyframes lx-floatC { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-4px) } }
 
-
-
 /* ---------- POSTS DE ROL ---------- */
 .lu-cam {
   --cm-vio: #a878ff;
@@ -596,7 +603,7 @@
 /* ---------- reja principal ---------- */
 .lu-cam .cm-grid { display: flex; flex-wrap: wrap; gap: 13px; align-items: stretch; padding: 14px 0 0 !important; }
 .lu-cam .cm-left { flex: 1 1 160px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
-.lu-cam .cm-right { flex: 3 1 330px; min-width: 0; max-width: 450px !important; display: flex; }
+.lu-cam .cm-right { flex: 3 1 330px; min-width: 0; max-width: 450px !important; display: flex;}
 
 /* ---------- titulo ---------- */
 .lu-cam .cm-title { position: relative; padding: 2px 2px 4px !important; }
@@ -694,7 +701,10 @@
   font-family: "aktiv-grotesk", sans-serif !important; font-size: 13px !important;
   line-height: 1.8 !important; color: #c3d3de !important;
   text-align: justify; hyphens: none; text-wrap: pretty;
+  max-height: 450px; overflow-y: auto; 
+  scrollbar-width: none; -ms-overflow-style: none;
 }
+.lu-cam .cm-text::-webkit-scrollbar { width: 0; height: 0; display: none; background: transparent; }
 .lu-cam .cm-text b, .lu-cam .cm-text strong {
   color: var(--cm-bold, #c9b0ff) !important; font-weight: 700 !important;
 }
