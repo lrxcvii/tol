@@ -365,6 +365,24 @@
   line-height: 1.8 !important; color: #c3d3de !important;
   text-align: justify; hyphens: none; text-wrap: pretty;
 }
+.lu-lx .lx-body b, .lu-lx .lx-body strong {
+  color: #c9b0ff !important; font-weight: 700 !important;
+  text-shadow: 0 0 14px #9664ff59;
+}
+.lu-lx .lx-body i, .lu-lx .lx-body em {
+  color: #b9cddb !important; font-style: italic !important;
+}
+.lu-lx .lx-body u {
+  color: #eef5fa !important; text-decoration: underline !important;
+  text-decoration-color: #a878ff !important;
+  text-decoration-thickness: 1px; text-underline-offset: 4px;
+}
+.lu-lx .lx-body a, .lu-lx .lx-body a:visited {
+  color: #cbb2ff !important; text-decoration: none !important;
+  border-bottom: 1px solid #a878ff80; transition: color .2s, border-color .2s;
+}
+.lu-lx .lx-body a:hover { color: #f2f8fc !important; border-color: #cbb2ff; }
+
 
 /* ---------- scroll de la caja de texto (barra fina solo al hover) ---------- */
 .lu-lx .lx-body {
