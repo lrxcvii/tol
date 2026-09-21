@@ -1,183 +1,6 @@
-/* ---------- contenedor ---------- */
-.lu-cam {
-  --cm-vio: #a878ff;
-  position: relative; display: block; width: 100%; max-width: 600px !important;
-  margin: 0 auto !important; padding: 16px 15px 14px !important;
-  overflow: hidden; border: 1px solid #a878ff2e;
-  font-family: "ff-typestar-ocr-web-pro", "Share Tech Mono", monospace !important;
-  font-size: 12px !important; line-height: 1.6 !important;
-  color: #c3d3de !important; text-align: left;
-  background: radial-gradient(600px 420px at 50% 20%, #12181d 0%, #0a0e12 60%, #07090c 100%) !important;
-  box-shadow: 0 18px 50px #00000073 !important;
-}
-.lu-cam .cm-crt {
-  position: absolute; inset: 0; pointer-events: none; z-index: 9;
-  background: repeating-linear-gradient(to bottom, #00000000 0px, #00000000 2px, #0000003d 3px, #00000000 4px);
-  animation: cm-flick 5s infinite steps(1);
-}
-
-/* ---------- barra superior ---------- */
-.lu-cam .cm-top {
-  display: flex; justify-content: space-between; align-items: center; gap: 10px;
-  padding-bottom: 9px !important; border-bottom: 1px solid #a878ff33;
-  font-size: 7.5px !important; letter-spacing: .26em; color: #6d808e; text-transform: uppercase;
-}
-.lu-cam .cm-top strong { color: #dfe9f0; font-weight: 400; }
-.lu-cam .cm-top em { font-style: normal; color: #c9b0ff !important; }
-.lu-cam .cm-bar { position: relative; height: 3px; margin-top: 9px !important; overflow: hidden; background: #d6e8f40a; }
-.lu-cam .cm-bar span {
-  position: absolute; top: 0; bottom: 0; width: 34%;
-  background: linear-gradient(90deg, #a878ff00, var(--cm-vio, #a878ff), #cbb2ff, #a878ff00);
-  animation: cm-sweep 6s ease-in-out infinite;
-}
-
-/* ---------- reja principal ---------- */
-.lu-cam .cm-grid { display: flex; flex-wrap: wrap; gap: 13px; align-items: stretch; padding: 14px 0 0 !important; }
-.lu-cam .cm-left { flex: 1 1 160px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
-.lu-cam .cm-right { flex: 3 1 330px; min-width: 0; max-width: 450px !important; display: flex; }
-
-/* ---------- titulo ---------- */
-.lu-cam .cm-title { position: relative; padding: 2px 2px 4px !important; }
-.lu-cam .cm-kick { font-size: 7.5px !important; letter-spacing: .32em; color: #6d808e; text-transform: uppercase; }
-.lu-cam .cm-h1 {
-  font-family: "manifold-extd-cf", sans-serif !important; font-weight: 400;
-  font-size: 16px !important; line-height: 1.35 !important; letter-spacing: .1em;
-  color: #eef5fa; text-transform: uppercase; margin-top: 14px !important;
-  overflow-wrap: anywhere;
-}
-.lu-cam .cm-line { width: 52px; height: 1px; background: #bed6e866; margin: 14px 0 12px !important; }
-.lu-cam .cm-sub {
-  display: flex; justify-content: space-between; gap: 8px;
-  font-size: 7.5px !important; letter-spacing: .22em; color: #7e93a2; text-transform: uppercase;
-}
-.lu-cam .cm-sub strong { color: #c9b0ff !important; font-weight: 400; }
-
-/* ---------- camaras ---------- */
-.lu-cam .cm-cam {
-  position: relative; border: 1px solid #bed6e82e; padding: 7px 7px 6px !important;
-  background: linear-gradient(170deg, #d6e8f40c, #a878ff08), #0b1015;
-  box-shadow: 0 10px 24px #00000073 !important;
-}
-.lu-cam .cm-cam:hover { border-color: #a878ff99; box-shadow: 0 10px 26px #00000080, 0 0 18px #9664ff4d !important; }
-.lu-cam .cm-clab {
-  display: flex; justify-content: space-between; align-items: center; gap: 6px;
-  padding-bottom: 6px !important; font-size: 7.5px !important; letter-spacing: .18em;
-  color: #8ea3b2; text-transform: uppercase;
-}
-.lu-cam .cm-clab strong { color: #dfe9f0; font-weight: 400; }
-.lu-cam .cm-rec { display: flex; align-items: center; gap: 4px; color: #c9b0ff !important; font-size: 7px !important; letter-spacing: .2em; }
-.lu-cam .cm-rec span { width: 5px; height: 5px; background: var(--cm-vio, #a878ff); box-shadow: 0 0 7px #a878ffe6; animation: cm-rec 1.6s infinite; }
-
-.lu-cam .cm-shot { position: relative; width: 100%; aspect-ratio: 4 / 3; }
-.lu-cam .cm-tall .cm-shot { aspect-ratio: 3 / 4; overflow: hidden; background: #05070a; }
-.lu-cam .cm-shot img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
-  filter: grayscale(1) contrast(1.35) brightness(.72) saturate(0);
-  animation: cm-noise 7s steps(1) infinite;
-}
-.lu-cam .cm-lines {
-  position: absolute; inset: 0; pointer-events: none;
-  background: repeating-linear-gradient(to bottom, #00000000 0px, #00000000 2px, #00000059 3px, #00000000 4px);
-}
-.lu-cam .cm-tint {
-  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
-  background: radial-gradient(75% 65% at 50% 45%, #a878ff1f, #4a2b8f2e 70%, #1a0f3300 100%);
-}
-.lu-cam .cm-vig { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 40px #000000b3, inset 0 0 90px #00000080 !important; }
-.lu-cam .cm-sweep {
-  position: absolute; left: 0; right: 0; height: 30%; pointer-events: none;
-  background: linear-gradient(to bottom, #d6e8f400, #d6e8f414, #a878ff1a, #d6e8f400);
-  animation: cm-vscan 5.5s linear infinite;
-}
-.lu-cam .cm-tag {
-  position: absolute; inset: 0; z-index: 6; display: flex;
-  align-items: center; justify-content: center; pointer-events: none;
-  background: radial-gradient(70% 70% at 50% 50%, #0a0e12b8, #05070ae6);
-  opacity: 0; transition: opacity .28s ease;
-}
-.lu-cam .cm-cam:hover .cm-tag { opacity: 1; }
-.lu-cam .cm-tag span {
-  font-family: "ff-typestar-ocr-web-pro", "Share Tech Mono", monospace !important;
-  font-size: 11px !important; letter-spacing: .3em; text-transform: uppercase;
-  color: #e8ddff !important; text-shadow: 0 0 12px #a878ffb3 !important;
-  padding: 6px 10px !important; border-top: 1px solid #a878ff66; border-bottom: 1px solid #a878ff66;
-  transform: translateY(6px); transition: transform .28s ease;
-}
-.lu-cam .cm-cam:hover .cm-tag span { transform: translateY(0); }
-.lu-cam .cm-brk { position: absolute; width: 12px; height: 12px; pointer-events: none; border: 1px solid #e8f2fa8c; }
-.lu-cam .cm-brk1 { top: 6px; left: 6px; border-right: 0; border-bottom: 0; }
-.lu-cam .cm-brk2 { top: 6px; right: 6px; border-left: 0; border-bottom: 0; }
-.lu-cam .cm-brk3 { bottom: 6px; left: 6px; border-right: 0; border-top: 0; }
-.lu-cam .cm-brk4 { bottom: 6px; right: 6px; border-left: 0; border-top: 0; }
-.lu-cam .cm-stamp {
-  position: absolute; left: 24px; right: 24px; bottom: 7px; display: flex; justify-content: space-between;
-  gap: 6px; pointer-events: none; font-size: 7px !important; letter-spacing: .14em;
-  color: #dfe9f0 !important; text-shadow: 0 0 6px #000000cc, 0 1px 2px #000000e6 !important;
-}
-
-/* ---------- registro de rol ---------- */
-.lu-cam .cm-log {
-  position: relative; flex: 1; display: flex; flex-direction: column;
-  border: 1px solid #bed6e82e; padding: 14px 14px 12px !important;
-  background: linear-gradient(170deg, #d6e8f40e, #a878ff08), #0b1015;
-  box-shadow: 0 18px 40px #00000080, 0 0 26px #a878ff24 !important;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
-}
-.lu-cam .cm-lhead { display: flex; align-items: center; gap: 8px; padding-bottom: 11px !important; }
-.lu-cam .cm-lhead strong { font-size: 7.5px !important; letter-spacing: .3em; color: #dfe9f0; text-transform: uppercase; }
-.lu-cam .cm-lhead i { flex: 1; height: 1px; background: linear-gradient(90deg, #a878ff99, #a878ff00); }
-.lu-cam .cm-lhead em { font-style: normal; font-size: 7px !important; letter-spacing: .22em; color: #8f78c9; }
-.lu-cam .cm-text {
-  flex: 1; padding-top: 11px !important; border-top: 1px solid #a878ff2e;
-  font-family: "aktiv-grotesk", sans-serif !important; font-size: 13px !important;
-  line-height: 1.8 !important; color: #c3d3de !important;
-  text-align: justify; hyphens: none; text-wrap: pretty;
-}
-.lu-cam .cm-text b, .lu-cam .cm-text strong {
-  color: var(--cm-bold, #c9b0ff) !important; font-weight: 700 !important;
-}
-.lu-cam .cm-text i, .lu-cam .cm-text em {
-  color: var(--cm-ital, #c3d3de) !important; font-style: italic !important;
-}
-.lu-cam .cm-text u {
-  color: var(--cm-under, #dfe9f0) !important;
-  text-decoration: underline !important; text-underline-offset: 3px;
-  text-decoration-color: var(--cm-vio, #a878ff) !important;
-}
-.lu-cam .cm-text a, .lu-cam .cm-text a:hover, .lu-cam .cm-text a:visited {
-  color: var(--cm-link, #a878ff) !important;
-  border-bottom: 1px solid #a878ff66; text-decoration: none !important;
-}
-.lu-cam .cm-lfoot {
-  display: flex; justify-content: space-between; align-items: center; gap: 8px;
-  margin-top: auto !important; padding-top: 11px !important; border-top: 1px solid #bed6e81f;
-  font-size: 7px !important; letter-spacing: .22em; color: #4e5e6b; text-transform: uppercase;
-}
-.lu-cam .cm-lfoot em { font-style: normal; color: #8f78c9 !important; }
-
-/* ---------- pie ---------- */
-.lu-cam .cm-foot {
-  display: flex; justify-content: space-between; align-items: center; gap: 10px;
-  margin-top: 13px !important; padding-top: 10px !important; border-top: 1px solid #a878ff2e;
-  font-size: 7px !important; letter-spacing: .24em; color: #4e5e6b; text-transform: uppercase;
-}
-.lu-cam .cm-dots { display: flex; gap: 4px; align-items: center; }
-.lu-cam .cm-dots span { width: 4px; height: 4px; background: var(--cm-vio, #a878ff); box-shadow: 0 0 6px #a878ffb3; animation: cm-rec 1.4s infinite; }
-.lu-cam .cm-dots span:nth-child(2) { animation-delay: .25s; }
-.lu-cam .cm-dots span:nth-child(3) { animation-delay: .5s; }
-
-/* ---------- keyframes ---------- */
-@keyframes cm-flick { 0%, 100% { opacity: .4 } 41% { opacity: .2 } 44% { opacity: .55 } 78% { opacity: .28 } }
-@keyframes cm-rec   { 0%, 45% { opacity: 1 } 50%, 100% { opacity: .15 } }
-@keyframes cm-glow  { 0%, 100% { text-shadow: 0 0 18px #a878ff59 } 50% { text-shadow: 0 0 32px #cbb2ffb3 } }
-@keyframes cm-sweep { 0% { transform: translateX(-110%) } 55%, 100% { transform: translateX(400%) } }
-@keyframes cm-vscan { 0% { transform: translateY(-40%) } 100% { transform: translateY(340%) } }
-@keyframes cm-noise { 0%, 93%, 100% { filter: grayscale(1) contrast(1.35) brightness(.72) saturate(0) }
-                      94% { filter: grayscale(1) contrast(1.9) brightness(.95) saturate(0) }
-                      95% { filter: grayscale(1) contrast(1.1) brightness(.55) saturate(0) }
-                      96% { filter: grayscale(1) contrast(1.6) brightness(.85) saturate(0) } }
-
-/* ---------- raiz · sin fondo ni envoltorio: la tablilla va suelta en el post ---------- */
+/* ==========================================================================
+   1 · INTRO
+   ========================================================================== */
 .lu-lx {
   --lx-vio: #a878ff;
   position: relative; display: block;
@@ -188,10 +11,6 @@
   background: none !important;
 }
 .lu-lx .lx-stage { position: relative; }
-
-/* ==========================================================================
-   1 · PANTALLA DE LOGIN  (va en el flujo y colapsa a altura cero al acabar)
-   ========================================================================== */
 .lu-lx .lx-veil {
   position: relative; overflow: hidden; max-height: 1400px;
   padding: 0 0 16px !important; background: none !important;
@@ -738,3 +557,184 @@
 @keyframes lx-floatA { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-6px) } }
 @keyframes lx-floatB { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-8px) } }
 @keyframes lx-floatC { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-4px) } }
+
+
+
+/* ---------- POSTS DE ROL ---------- */
+.lu-cam {
+  --cm-vio: #a878ff;
+  position: relative; display: block; width: 100%; max-width: 600px !important;
+  margin: 0 auto !important; padding: 16px 15px 14px !important;
+  overflow: hidden; border: 1px solid #a878ff2e;
+  font-family: "ff-typestar-ocr-web-pro", "Share Tech Mono", monospace !important;
+  font-size: 12px !important; line-height: 1.6 !important;
+  color: #c3d3de !important; text-align: left;
+  background: radial-gradient(600px 420px at 50% 20%, #12181d 0%, #0a0e12 60%, #07090c 100%) !important;
+  box-shadow: 0 18px 50px #00000073 !important;
+}
+.lu-cam .cm-crt {
+  position: absolute; inset: 0; pointer-events: none; z-index: 9;
+  background: repeating-linear-gradient(to bottom, #00000000 0px, #00000000 2px, #0000003d 3px, #00000000 4px);
+  animation: cm-flick 5s infinite steps(1);
+}
+
+/* ---------- barra superior ---------- */
+.lu-cam .cm-top {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  padding-bottom: 9px !important; border-bottom: 1px solid #a878ff33;
+  font-size: 7.5px !important; letter-spacing: .26em; color: #6d808e; text-transform: uppercase;
+}
+.lu-cam .cm-top strong { color: #dfe9f0; font-weight: 400; }
+.lu-cam .cm-top em { font-style: normal; color: #c9b0ff !important; }
+.lu-cam .cm-bar { position: relative; height: 3px; margin-top: 9px !important; overflow: hidden; background: #d6e8f40a; }
+.lu-cam .cm-bar span {
+  position: absolute; top: 0; bottom: 0; width: 34%;
+  background: linear-gradient(90deg, #a878ff00, var(--cm-vio, #a878ff), #cbb2ff, #a878ff00);
+  animation: cm-sweep 6s ease-in-out infinite;
+}
+
+/* ---------- reja principal ---------- */
+.lu-cam .cm-grid { display: flex; flex-wrap: wrap; gap: 13px; align-items: stretch; padding: 14px 0 0 !important; }
+.lu-cam .cm-left { flex: 1 1 160px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.lu-cam .cm-right { flex: 3 1 330px; min-width: 0; max-width: 450px !important; display: flex; }
+
+/* ---------- titulo ---------- */
+.lu-cam .cm-title { position: relative; padding: 2px 2px 4px !important; }
+.lu-cam .cm-kick { font-size: 7.5px !important; letter-spacing: .32em; color: #6d808e; text-transform: uppercase; }
+.lu-cam .cm-h1 {
+  font-family: "manifold-extd-cf", sans-serif !important; font-weight: 400;
+  font-size: 16px !important; line-height: 1.35 !important; letter-spacing: .1em;
+  color: #eef5fa; text-transform: uppercase; margin-top: 14px !important;
+  overflow-wrap: anywhere;
+}
+.lu-cam .cm-line { width: 52px; height: 1px; background: #bed6e866; margin: 14px 0 12px !important; }
+.lu-cam .cm-sub {
+  display: flex; justify-content: space-between; gap: 8px;
+  font-size: 7.5px !important; letter-spacing: .22em; color: #7e93a2; text-transform: uppercase;
+}
+.lu-cam .cm-sub strong { color: #c9b0ff !important; font-weight: 400; }
+
+/* ---------- camaras ---------- */
+.lu-cam .cm-cam {
+  position: relative; border: 1px solid #bed6e82e; padding: 7px 7px 6px !important;
+  background: linear-gradient(170deg, #d6e8f40c, #a878ff08), #0b1015;
+  box-shadow: 0 10px 24px #00000073 !important;
+}
+.lu-cam .cm-cam:hover { border-color: #a878ff99; box-shadow: 0 10px 26px #00000080, 0 0 18px #9664ff4d !important; }
+.lu-cam .cm-clab {
+  display: flex; justify-content: space-between; align-items: center; gap: 6px;
+  padding-bottom: 6px !important; font-size: 7.5px !important; letter-spacing: .18em;
+  color: #8ea3b2; text-transform: uppercase;
+}
+.lu-cam .cm-clab strong { color: #dfe9f0; font-weight: 400; }
+.lu-cam .cm-rec { display: flex; align-items: center; gap: 4px; color: #c9b0ff !important; font-size: 7px !important; letter-spacing: .2em; }
+.lu-cam .cm-rec span { width: 5px; height: 5px; background: var(--cm-vio, #a878ff); box-shadow: 0 0 7px #a878ffe6; animation: cm-rec 1.6s infinite; }
+
+.lu-cam .cm-shot { position: relative; width: 100%; aspect-ratio: 4 / 3; }
+.lu-cam .cm-tall .cm-shot { aspect-ratio: 3 / 4; overflow: hidden; background: #05070a; }
+.lu-cam .cm-shot img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
+  filter: grayscale(1) contrast(1.35) brightness(.72) saturate(0);
+  animation: cm-noise 7s steps(1) infinite;
+}
+.lu-cam .cm-lines {
+  position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(to bottom, #00000000 0px, #00000000 2px, #00000059 3px, #00000000 4px);
+}
+.lu-cam .cm-tint {
+  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+  background: radial-gradient(75% 65% at 50% 45%, #a878ff1f, #4a2b8f2e 70%, #1a0f3300 100%);
+}
+.lu-cam .cm-vig { position: absolute; inset: 0; pointer-events: none; box-shadow: inset 0 0 40px #000000b3, inset 0 0 90px #00000080 !important; }
+.lu-cam .cm-sweep {
+  position: absolute; left: 0; right: 0; height: 30%; pointer-events: none;
+  background: linear-gradient(to bottom, #d6e8f400, #d6e8f414, #a878ff1a, #d6e8f400);
+  animation: cm-vscan 5.5s linear infinite;
+}
+.lu-cam .cm-tag {
+  position: absolute; inset: 0; z-index: 6; display: flex;
+  align-items: center; justify-content: center; pointer-events: none;
+  background: radial-gradient(70% 70% at 50% 50%, #0a0e12b8, #05070ae6);
+  opacity: 0; transition: opacity .28s ease;
+}
+.lu-cam .cm-cam:hover .cm-tag { opacity: 1; }
+.lu-cam .cm-tag span {
+  font-family: "ff-typestar-ocr-web-pro", "Share Tech Mono", monospace !important;
+  font-size: 11px !important; letter-spacing: .3em; text-transform: uppercase;
+  color: #e8ddff !important; text-shadow: 0 0 12px #a878ffb3 !important;
+  padding: 6px 10px !important; border-top: 1px solid #a878ff66; border-bottom: 1px solid #a878ff66;
+  transform: translateY(6px); transition: transform .28s ease;
+}
+.lu-cam .cm-cam:hover .cm-tag span { transform: translateY(0); }
+.lu-cam .cm-brk { position: absolute; width: 12px; height: 12px; pointer-events: none; border: 1px solid #e8f2fa8c; }
+.lu-cam .cm-brk1 { top: 6px; left: 6px; border-right: 0; border-bottom: 0; }
+.lu-cam .cm-brk2 { top: 6px; right: 6px; border-left: 0; border-bottom: 0; }
+.lu-cam .cm-brk3 { bottom: 6px; left: 6px; border-right: 0; border-top: 0; }
+.lu-cam .cm-brk4 { bottom: 6px; right: 6px; border-left: 0; border-top: 0; }
+.lu-cam .cm-stamp {
+  position: absolute; left: 24px; right: 24px; bottom: 7px; display: flex; justify-content: space-between;
+  gap: 6px; pointer-events: none; font-size: 7px !important; letter-spacing: .14em;
+  color: #dfe9f0 !important; text-shadow: 0 0 6px #000000cc, 0 1px 2px #000000e6 !important;
+}
+
+/* ---------- registro de rol ---------- */
+.lu-cam .cm-log {
+  position: relative; flex: 1; display: flex; flex-direction: column;
+  border: 1px solid #bed6e82e; padding: 14px 14px 12px !important;
+  background: linear-gradient(170deg, #d6e8f40e, #a878ff08), #0b1015;
+  box-shadow: 0 18px 40px #00000080, 0 0 26px #a878ff24 !important;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+.lu-cam .cm-lhead { display: flex; align-items: center; gap: 8px; padding-bottom: 11px !important; }
+.lu-cam .cm-lhead strong { font-size: 7.5px !important; letter-spacing: .3em; color: #dfe9f0; text-transform: uppercase; }
+.lu-cam .cm-lhead i { flex: 1; height: 1px; background: linear-gradient(90deg, #a878ff99, #a878ff00); }
+.lu-cam .cm-lhead em { font-style: normal; font-size: 7px !important; letter-spacing: .22em; color: #8f78c9; }
+.lu-cam .cm-text {
+  flex: 1; padding-top: 11px !important; border-top: 1px solid #a878ff2e;
+  font-family: "aktiv-grotesk", sans-serif !important; font-size: 13px !important;
+  line-height: 1.8 !important; color: #c3d3de !important;
+  text-align: justify; hyphens: none; text-wrap: pretty;
+}
+.lu-cam .cm-text b, .lu-cam .cm-text strong {
+  color: var(--cm-bold, #c9b0ff) !important; font-weight: 700 !important;
+}
+.lu-cam .cm-text i, .lu-cam .cm-text em {
+  color: var(--cm-ital, #c3d3de) !important; font-style: italic !important;
+}
+.lu-cam .cm-text u {
+  color: var(--cm-under, #dfe9f0) !important;
+  text-decoration: underline !important; text-underline-offset: 3px;
+  text-decoration-color: var(--cm-vio, #a878ff) !important;
+}
+.lu-cam .cm-text a, .lu-cam .cm-text a:hover, .lu-cam .cm-text a:visited {
+  color: var(--cm-link, #a878ff) !important;
+  border-bottom: 1px solid #a878ff66; text-decoration: none !important;
+}
+.lu-cam .cm-lfoot {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  margin-top: auto !important; padding-top: 11px !important; border-top: 1px solid #bed6e81f;
+  font-size: 7px !important; letter-spacing: .22em; color: #4e5e6b; text-transform: uppercase;
+}
+.lu-cam .cm-lfoot em { font-style: normal; color: #8f78c9 !important; }
+
+/* ---------- pie ---------- */
+.lu-cam .cm-foot {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px;
+  margin-top: 13px !important; padding-top: 10px !important; border-top: 1px solid #a878ff2e;
+  font-size: 7px !important; letter-spacing: .24em; color: #4e5e6b; text-transform: uppercase;
+}
+.lu-cam .cm-dots { display: flex; gap: 4px; align-items: center; }
+.lu-cam .cm-dots span { width: 4px; height: 4px; background: var(--cm-vio, #a878ff); box-shadow: 0 0 6px #a878ffb3; animation: cm-rec 1.4s infinite; }
+.lu-cam .cm-dots span:nth-child(2) { animation-delay: .25s; }
+.lu-cam .cm-dots span:nth-child(3) { animation-delay: .5s; }
+
+/* ---------- keyframes ---------- */
+@keyframes cm-flick { 0%, 100% { opacity: .4 } 41% { opacity: .2 } 44% { opacity: .55 } 78% { opacity: .28 } }
+@keyframes cm-rec   { 0%, 45% { opacity: 1 } 50%, 100% { opacity: .15 } }
+@keyframes cm-glow  { 0%, 100% { text-shadow: 0 0 18px #a878ff59 } 50% { text-shadow: 0 0 32px #cbb2ffb3 } }
+@keyframes cm-sweep { 0% { transform: translateX(-110%) } 55%, 100% { transform: translateX(400%) } }
+@keyframes cm-vscan { 0% { transform: translateY(-40%) } 100% { transform: translateY(340%) } }
+@keyframes cm-noise { 0%, 93%, 100% { filter: grayscale(1) contrast(1.35) brightness(.72) saturate(0) }
+                      94% { filter: grayscale(1) contrast(1.9) brightness(.95) saturate(0) }
+                      95% { filter: grayscale(1) contrast(1.1) brightness(.55) saturate(0) }
+                      96% { filter: grayscale(1) contrast(1.6) brightness(.85) saturate(0) } }
