@@ -461,8 +461,7 @@
 .lu-lx .lx-idtop strong { color: #c9b0ff !important; font-weight: 400; }
 .lu-lx .lx-pic {
   position: relative; width: 100%; aspect-ratio: 2 / 3; overflow: hidden;
-  border: 1px solid #d6e8f466; box-shadow: inset 0 0 18px #a878ff33, 0 0 14px #b0cee41f !important;
-}
+  border: 1px solid #d6e8f466; box-shadow: inset 0 0 18px #a878ff33, 0 0 14px #b0cee41f !important;filter: grayscale(0.7) contrast(1.4) brightness(0.8);}
 .lu-lx .lx-pic img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 .lu-lx .lx-pic span {
   position: absolute; inset: 0; pointer-events: none;
@@ -489,7 +488,7 @@
 .lu-lx .lx-dtag .lx-ln { flex: 1; height: 1px; background: linear-gradient(90deg, #a878ff8c, #a878ff00); }
 .lu-lx .lx-row { display: flex; align-items: baseline; gap: 6px; }
 .lu-lx .lx-row u { text-decoration: none !important; color: #8f78c9 !important; letter-spacing: .1em; white-space: nowrap; }
-.lu-lx .lx-row em { font-style: normal; color: #7e93a2; letter-spacing: .12em; white-space: nowrap; }
+.lu-lx .lx-row em { font-style: normal; color: #7e93a2; letter-spacing: 0px; white-space: nowrap; }
 .lu-lx .lx-row .lx-ln { flex: 1; border-bottom: 1px dotted #bed6e838; transform: translateY(-3px); }
 .lu-lx .lx-row strong { color: #dfe9f0 !important; font-weight: 400; white-space: nowrap; }
 .lu-lx .lx-row strong.lx-vio { color: #c9b0ff !important; text-shadow: 0 0 12px #9664ff8c; }
@@ -557,15 +556,15 @@
 /* ---------- lista de otros expedientes ---------- */
 .lu-lx .lx-npcs { flex: 1; border-top: 1px solid #a878ff2e; }
 .lu-lx .lx-npc {
-  display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 9px; align-items: center;
+  display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 9px; align-items: center;
   padding: 7px 5px !important; border-bottom: 1px solid #bed6e814;
   transition: background .22s, box-shadow .22s;
 }
 .lu-lx .lx-npc:nth-of-type(odd) { background: #d6e8f405; }
 .lu-lx .lx-npc:hover { background: #a878ff1f; box-shadow: inset 2px 0 0 #cbb2ff !important; }
 .lu-lx .lx-npcpic {
-  width: 30px; height: 30px; overflow: hidden; border: 1px solid #d6e8f461;
-  box-shadow: inset 0 0 10px #a878ff33 !important;
+  width: 40px; height: 40px; overflow: hidden; border: 1px solid #d6e8f461;
+  box-shadow: inset 0 0 10px #a878ff33 !important;filter: grayscale(1) contrast(1.4) brightness(0.8);
 }
 .lu-lx .lx-npcpic img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 .lu-lx .lx-npctxt { min-width: 0; }
@@ -653,7 +652,7 @@
 }
 
 /* ==========================================================================
-   3 · PING-PONG 
+   3 · PING-PONG  ·  el estado B usa los keyframes -b y reinicia todo
    ========================================================================== */
 .lu-lx .lx-out-a { display: none; }
 #lu-lx-b:target ~ .lu-lx .lx-out-b { display: none; }
