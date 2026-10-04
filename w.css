@@ -1,4 +1,3 @@
-/* ============ RESET ANTI-SKIN ============ */
 #lu div, #lu span, #lu p, #lu ul, #lu li, #lu img, #lu a {
   background: none;
   border: 0;
@@ -390,6 +389,179 @@
 #lu .lu-d { color: #b9e3b5 !important; }
 #lu .lu-r { color: #f0c79a !important; }
 #lu .lu-o { color: #e58b8b !important; }
+
+/* ============ ENCABEZADO DE SECCIÓN (col. derecha) ============ */
+#lu .lu-hd {
+  flex: none !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: -6px !important;
+}
+#lu .lu-hd .lu-h2 { margin: 0 !important; flex: none !important; }
+#lu .lu-hd::after {
+  content: "" !important;
+  flex: 1 !important;
+  height: 1px !important;
+  background-image: linear-gradient(90deg, var(--pink-dim) 50%, transparent 50%) !important;
+  background-size: 6px 1px !important;
+}
+
+/* ============ GALERÍA DE PBs (col. izquierda, 96x120) ============ */
+#lu .lu-gal {
+  display: grid !important;
+  grid-template-columns: repeat(2, 96px) !important;
+  justify-content: space-between !important;
+  row-gap: 8px !important;
+  margin-top: 6px !important;
+}
+
+#lu .lu-pb {
+  position: relative !important;
+  display: block !important;
+  width: 96px !important;
+  height: 120px !important;
+  overflow: hidden !important;
+  background-color: #0b0b0b !important;
+  cursor: default !important;
+}
+
+#lu .lu-pb img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  filter: grayscale(100%) contrast(125%) brightness(83%) !important;
+  transition: filter 0.6s ease, transform 0.6s ease !important;
+}
+
+#lu .lu-pb::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-color: var(--pink) !important;
+  mix-blend-mode: color !important;
+  opacity: 0 !important;
+  transition: opacity 0.6s ease !important;
+  pointer-events: none !important;
+}
+
+#lu .lu-pbn {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  padding: 0 6px 6px !important;
+  opacity: 0 !important;
+  transform: translateY(8px) !important;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
+  pointer-events: none !important;
+}
+
+#lu .lu-pbn::before {
+  content: "" !important;
+  display: block !important;
+  width: 14px !important;
+  height: 1px !important;
+  margin-bottom: 3px !important;
+  background-color: var(--ink) !important;
+}
+
+#lu .lu-pbn1 {
+  display: block !important;
+  color: var(--ink) !important;
+  font-size: 11px !important;
+  line-height: 11px !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  text-transform: uppercase !important;
+}
+
+#lu .lu-pbn2 {
+  display: block !important;
+  color: #ffffffb3 !important;
+  font-size: 7px !important;
+  line-height: 9px !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+#lu .lu-pb:hover img { filter: grayscale(100%) contrast(217%) brightness(46%) !important; transform: scale(1.06) !important; }
+#lu .lu-pb:hover::after { opacity: 1 !important; }
+#lu .lu-pb:hover .lu-pbn { opacity: 1 !important; transform: translateY(0) !important; }
+
+/* ============ PLOT BUNNIES (col. derecha) ============ */
+#lu .lu-bns {
+  flex: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border-top: 1px dashed var(--pink-dim) !important;
+}
+
+#lu .lu-bn {
+  display: grid !important;
+  grid-template-columns: 26px minmax(0, 1fr) auto !important;
+  column-gap: 8px !important;
+  row-gap: 4px !important;
+  align-items: center !important;
+  padding: 8px 4px !important;
+  border-bottom: 1px dashed var(--pink-dim) !important;
+  transition: background-color 0.5s ease !important;
+}
+
+#lu .lu-bn:hover { background-color: #971f151a !important; }
+
+#lu .lu-bnn {
+  grid-row: span 2 !important;
+  align-self: start !important;
+  color: var(--pink) !important;
+  font-size: 20px !important;
+  line-height: 18px !important;
+  font-style: italic !important;
+  letter-spacing: -1px !important;
+}
+
+#lu .lu-bnt {
+  color: var(--ink) !important;
+  font-size: 14px !important;
+  line-height: 16px !important;
+  font-style: italic !important;
+  letter-spacing: -0.03em !important;
+  text-transform: uppercase !important;
+}
+
+#lu .lu-bn .lu-st { align-self: start !important; }
+#lu .lu-bn:hover .lu-st { gap: 4px !important; }
+#lu .lu-bn:hover .lu-st .lu-lb { max-width: 90px !important; opacity: 1 !important; }
+
+#lu .lu-kw {
+  grid-column: 2 / -1 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0 5px !important;
+  color: #bdbdbd !important;
+  font-size: 8px !important;
+  line-height: 12px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+#lu .lu-kw span { flex: none !important; white-space: nowrap !important; }
+
+#lu .lu-kw span:not(:last-child)::after {
+  content: "//" !important;
+  color: var(--pink) !important;
+  font-weight: 700 !important;
+  margin-left: 5px !important;
+}
+
+#lu .lu-bnd { grid-column: 2 / -1 !important; margin: 2px 0 0 !important; }
 
 /* ============ PIE ============ */
 #lu .lu-btm {
