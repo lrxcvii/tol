@@ -251,7 +251,7 @@
 .fdm-trama .fdm-caps ul::before {
   content: "";
   position: absolute;
-  left: 50%; top: 0; bottom: 0;
+  left: calc(50% - 2px); top: 0; bottom: 0;
   width: 1px;
   transform: translateX(-50%);
   background: linear-gradient(#0000, var(--acento, #c99067) 12%, var(--acento, #c99067) 88%, #0000);
@@ -377,17 +377,17 @@
 }
 .fdm-telon .fdm-foto:hover img { transform: scale(1.04); }
 
-/* nombre al pasar el ratón */
+/* nombre al pasar el ratón: cubre toda la foto, el oscuro se disuelve antes de los bordes */
 .fdm-telon .fdm-info {
   position: absolute;
-  left: 8%; right: 22%; top: 0; bottom: 0;
+  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 0 30px 80px !important;
+  padding: 0 78px 30px 108px !important;
   text-align: center;
-  background: radial-gradient(ellipse 90% 34% at 50% 47%, #0b0204f2 25%, #0b020400 100%) !important;
+  background: radial-gradient(ellipse 46% 34% at 54% 47%, #0b0204f2 25%, #0b020400 100%) !important;
   opacity: 0;
   transition: opacity .9s;
 }
@@ -536,7 +536,7 @@
 .fdm-telon .fdm-texto em, .fdm-telon .fdm-texto i { font-style: italic; }
 .fdm-telon .fdm-texto s, .fdm-telon .fdm-texto strike { text-decoration: line-through; }
 
-/* subrayado [u] — cubre <u> y <span style="text-decoration: underline"> */
+/* subrayado [u] — cubre u y span con text-decoration underline */
 .fdm-telon .fdm-texto u,
 .fdm-telon .fdm-texto span[style*="underline"],
 .fdm-trama .fdm-sinopsis u,
