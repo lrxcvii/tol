@@ -202,7 +202,6 @@
   height: 1px;
   background-color: var(--acento, #c99067) !important;
   opacity: .7;
-
 }
 
 .fdm-trama .fdm-cab {
@@ -502,7 +501,7 @@
   opacity: .7;
 }
 
-/* texto con scroll: el formato vive aquí, no en el <p> */
+/* texto con scroll: el formato vive aquí, no en el p */
 .fdm-telon .fdm-texto {
   flex: 1;
   min-height: 0;
@@ -528,28 +527,35 @@
   line-height: inherit !important;
   color: inherit;
 }
-.fdm-telon .fdm-texto::-webkit-scrollbar { width: none; }
-.fdm-telon .fdm-texto::-webkit-scrollbar-track { background: #0000; }
-.fdm-telon .fdm-texto::-webkit-scrollbar-thumb { background: #c99067; }
+.fdm-telon .fdm-texto::-webkit-scrollbar { display: none; }
 .fdm-telon .fdm-texto p { margin: 0 0 .85em !important; padding: 0 !important; }
 .fdm-telon .fdm-texto p:last-child { margin-bottom: 0 !important; }
 
 /* formato dentro del texto */
 .fdm-telon .fdm-texto strong, .fdm-telon .fdm-texto b { font-weight: 700; color: var(--bold, #c99067) !important; }
 .fdm-telon .fdm-texto em, .fdm-telon .fdm-texto i { font-style: italic; }
-.fdm-telon .fdm-texto u {
-  text-decoration: underline;
-  text-decoration-color: #c9906799;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
+.fdm-telon .fdm-texto s, .fdm-telon .fdm-texto strike { text-decoration: line-through; }
+
+/* subrayado [u] — cubre <u> y <span style="text-decoration: underline"> */
+.fdm-telon .fdm-texto u,
+.fdm-telon .fdm-texto span[style*="underline"],
+.fdm-trama .fdm-sinopsis u,
+.fdm-trama .fdm-sinopsis span[style*="underline"] {
+  text-decoration-line: underline !important;
+  text-decoration-color: #c9906799 !important;
+  text-decoration-thickness: 1px !important;
+  text-decoration-style: solid !important;
+  text-underline-offset: 4px !important;
   text-decoration-skip-ink: auto;
   transition: text-decoration-color .3s, text-shadow .3s;
 }
-.fdm-telon .fdm-texto u:hover {
-  text-decoration-color: #c99067;
-  text-shadow: 0 0 10px #ffc9a659;
+.fdm-telon .fdm-texto u:hover,
+.fdm-telon .fdm-texto span[style*="underline"]:hover,
+.fdm-trama .fdm-sinopsis u:hover,
+.fdm-trama .fdm-sinopsis span[style*="underline"]:hover {
+  text-decoration-color: #c99067 !important;
+  text-shadow: 0 0 10px #ffc9a659 !important;
 }
-.fdm-telon .fdm-texto s, .fdm-telon .fdm-texto strike { text-decoration: line-through; }
 
 .fdm-telon strong { font-weight: 700; color: var(--bold, #c99067) !important; }
 .fdm-telon em { font-style: italic; }
