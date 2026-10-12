@@ -251,7 +251,7 @@
 .fdm-trama .fdm-caps ul::before {
   content: "";
   position: absolute;
-  left: calc(50% - 2px); top: 0; bottom: 0;
+  left: calc(50% - 3px); top: 0; bottom: 0;
   width: 1px;
   transform: translateX(-50%);
   background: linear-gradient(#0000, var(--acento, #c99067) 12%, var(--acento, #c99067) 88%, #0000);
@@ -270,6 +270,7 @@
 /* la estrella se dibuja en CSS para que quede centrada exacta sobre la línea */
 .fdm-trama .fdm-nodo {
   position: relative;
+   left: -3px;
   grid-column: 2;
   grid-row: 1;
   justify-self: center;
