@@ -1,0 +1,550 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@font-face {
+  font-family: 'Lordish';
+  src: url('https://cdn.jsdelivr.net/gh/lrxcvii/virgil@main/Lordish-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* ── Tablilla de trama · tríptico ── raíz: .lu-trama · prefijo: lut- */
+
+.lu-trama div, .lu-trama span, .lu-trama p, .lu-trama img, .lu-trama a, .lu-trama ul, .lu-trama li {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-indent: 0;
+  text-shadow: none;
+}
+.lu-trama, .lu-trama * {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  float: none;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.lu-trama {
+  position: relative;
+  width: 100% !important;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: none !important;
+  color: var(--tinta, #e9dfcf) !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+}
+.lu-trama p { margin: 0 0 .9em !important; padding: 0 !important; }
+.lu-trama ul, .lu-trama li { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+.lu-trama strong { color: var(--vitral, #d4553f) !important; font-weight: 600; }
+.lu-trama em { font-style: italic; }
+.lu-trama a { color: var(--vitral, #d4553f) !important; text-decoration: none; border-bottom: 1px solid var(--acento, #8f2d2d); }
+.lu-trama a:hover { color: var(--tinta, #e9dfcf) !important; }
+
+/* escenario: misma proporción que el marco (1024×1536) */
+.lu-trama .lut-stage { position: relative; width: 100%; aspect-ratio: 2 / 3; }
+
+.lu-trama .lut-marco {
+  position: absolute; left: 0; top: 0;
+  width: 100% !important; height: 100% !important; max-width: none !important;
+  z-index: 3; pointer-events: none;
+  filter: var(--marco, grayscale(1) brightness(.4) contrast(1.3));
+}
+
+/* nave central: fondo propio con luz de vela */
+.lu-trama .lut-nave {
+  position: absolute; left: 32.5%; top: 23.4%; width: 34.9%; height: 67.8%; z-index: 1;
+  clip-path: polygon(0 100%, 0 22%, 1% 19%, 4% 13%, 9% 8%, 13% 6%, 22% 4.5%, 25% 1.5%, 34% 0, 66% 0, 75% 1.5%, 78% 4.5%, 87% 6%, 91% 8%, 96% 13%, 99% 19%, 100% 22%, 100% 100%);
+  background:
+    radial-gradient(ellipse 75% 34% at 50% 9%, var(--luz, #a3322a66) 0%, #00000000 100%),
+    radial-gradient(ellipse 90% 30% at 50% 100%, #000000b3 0%, #00000000 100%),
+    linear-gradient(180deg, var(--nave1, #2b0f0d) 0%, var(--nave2, #140b0a) 55%, var(--nave3, #0a0606) 100%) !important;
+}
+
+/* rosetón: la vidriera encendida dentro del cuatrifolio */
+.lu-trama .lut-rosa {
+  position: absolute; left: 44.6%; top: 15.6%; width: 10.6%; height: 8.4%; z-index: 1;
+  background: radial-gradient(circle, var(--vitral, #d4553f) 0%, var(--acento, #8f2d2d) 48%, #1a0605 100%);
+  animation: lut-arde 5s ease-in-out infinite;
+}
+@keyframes lut-arde { 0%, 100% { opacity: 1; } 45% { opacity: .78; } 60% { opacity: .92; } }
+
+/* alas del tríptico: imágenes
+   cada ala acepta --x --y (encuadre, de 0% a 100%) y --z (zoom) en su style */
+.lu-trama .lut-ala {
+  position: absolute; top: 33.5%; height: 57.6%; width: 23.8%; z-index: 2; overflow: hidden;
+  clip-path: polygon(0 21.5%, 4% 13.6%, 18% 6.8%, 35% 2.3%, 50% 0, 65% 2.3%, 82% 6.8%, 96% 13.6%, 100% 21.5%, 100% 100%, 0 100%);
+}
+.lu-trama .lut-ala-i { left: 5.65%; }
+.lu-trama .lut-ala-d { left: 70.7%; }
+.lu-trama .lut-foto {
+  position: absolute; left: -6%; top: -4%; width: 112%; height: 108%;
+  animation: lut-deriva 9s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+@keyframes lut-deriva {
+  0% { transform: none; }
+  40% { transform: translate(-2.5%, 1.5%) skewY(1.2deg); }
+  100% { transform: translate(2.5%, -1.5%) skewY(-1.2deg) scale(1.03); }
+}
+.lu-trama .lut-ala img {
+  display: block; width: 100% !important; height: 100% !important; max-width: none !important;
+  object-fit: cover; object-position: var(--x, 50%) var(--y, 50%);
+  transform-origin: var(--x, 50%) var(--y, 50%);
+  transform: scale(var(--z, 1));
+  -webkit-user-drag: none; user-select: none;
+  filter: grayscale(1) contrast(1.15) brightness(.95) blur(0);
+  transition: filter 1.2s ease, transform 1.6s cubic-bezier(.16, .8, .2, 1);
+}
+.lu-trama .lut-tinte {
+  position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+  background: var(--tinte, #8a1c1c);
+  mix-blend-mode: multiply;
+}
+/* haz de luz que cruza la imagen al pasar el ratón */
+.lu-trama .lut-rayo {
+  position: absolute; left: -40%; top: 0; width: 180%; height: 100%; pointer-events: none;
+  background: linear-gradient(165deg, #00000000 36%, var(--rayo, #d4553f59) 47%, #f6e7c840 50%, var(--rayo, #d4553f59) 53%, #00000000 64%);
+  mix-blend-mode: screen;
+  transform: translateY(-115%);
+  transition: transform 1.9s cubic-bezier(.3, .6, .2, 1);
+}
+.lu-trama .lut-ala:hover .lut-foto { animation-play-state: running; }
+.lu-trama .lut-ala:hover img {
+  transform: scale(calc(var(--z, 1) * 1.1));
+  filter: grayscale(1) contrast(1.3) brightness(.45) blur(2px);
+}
+.lu-trama .lut-ala:hover .lut-rayo { transform: translateY(115%); }
+
+.lu-trama .lut-pie {
+  position: absolute; left: 0; right: 0; bottom: 16%;
+  padding: 50px 20px 6px !important; text-align: center; text-wrap: pretty;
+  background: linear-gradient(#00000000, #000000d9 60%);
+}
+/* continúa la sombra hasta el pie del arco: sin corte duro */
+.lu-trama .lut-pie::after {
+  content: ''; position: absolute; left: 0; right: 0; top: 100%; height: 400px;
+  background: #000000d9; pointer-events: none;
+}
+.lu-trama .lut-nombre {
+  display: block; font-family: 'Lordish', serif !important;
+  font-size: 33px !important; line-height: 1 !important;
+  color: #f6ecd9 !important;
+  background: linear-gradient(180deg, #ece2d0 0%, #ece2d0 36%, var(--carmin, #9e1f1a) 66%, var(--granate, #5a0b0b) 100%) !important;
+  background-size: 100% 300% !important; background-position: 0 0 !important;
+  -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 0 #00000099) drop-shadow(0 2px 8px #000000e6);
+  transition: font-size .9s cubic-bezier(.16, .8, .2, 1), background-position 1.4s ease, letter-spacing .9s ease;
+}
+.lu-trama .lut-ala:hover .lut-nombre {
+  font-size: 55px !important; letter-spacing: .02em;
+  background-position: 0 92% !important;
+}
+.lu-trama .lut-apellido {
+  display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: -3px !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 10.5px !important; letter-spacing: .28em; text-transform: uppercase; font-weight: 600;
+  color: #cbbda6 !important;
+  transition: letter-spacing .9s ease, color .9s ease;
+}
+.lu-trama .lut-apellido::before, .lu-trama .lut-apellido::after {
+  content: ''; width: 0; height: 1px; background: var(--vitral, #d4553f);
+  transition: width .9s cubic-bezier(.16, .8, .2, 1);
+}
+.lu-trama .lut-ala:hover .lut-apellido { letter-spacing: .4em; color: #f6ecd9 !important; }
+.lu-trama .lut-ala:hover .lut-apellido::before, .lu-trama .lut-ala:hover .lut-apellido::after { width: 14px; }
+
+/* datos del personaje: etiqueta arriba, dato debajo, a lo largo del arco */
+.lu-trama .lut-datos {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  max-height: 0; overflow: hidden;
+  transition: max-height 1s ease, padding .6s ease;
+}
+.lu-trama .lut-ala:hover .lut-datos { max-height: 420px; padding-top: 18px !important; }
+.lu-trama .lut-dato {
+  display: flex; flex-direction: column; align-items: center; gap: 3px; width: 100%;
+  font-style: italic; font-size: 15px !important; line-height: 1.2 !important;
+  color: var(--tinta, #e9dfcf) !important; text-wrap: balance;
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.lu-trama .lut-dato + .lut-dato::before {
+  content: ''; display: block; width: 4px; height: 4px; margin-bottom: 7px;
+  background: var(--carmin, #9e1f1a); transform: rotate(45deg);
+}
+.lu-trama .lut-dato em {
+  display: block; font-style: normal; font-weight: 700;
+  font-size: 8.5px !important; line-height: 1 !important; letter-spacing: .36em; text-transform: uppercase;
+  color: var(--vitral, #d4553f) !important;
+}
+.lu-trama .lut-dato a { border-bottom: 1px dotted var(--carmin, #9e1f1a) !important; }
+.lu-trama .lut-ala:hover .lut-dato { opacity: 1; transform: none; }
+.lu-trama .lut-ala:hover .lut-dato:nth-child(1) { transition-delay: .15s; }
+.lu-trama .lut-ala:hover .lut-dato:nth-child(2) { transition-delay: .23s; }
+.lu-trama .lut-ala:hover .lut-dato:nth-child(3) { transition-delay: .31s; }
+.lu-trama .lut-ala:hover .lut-dato:nth-child(4) { transition-delay: .39s; }
+.lu-trama .lut-ala:hover .lut-dato:nth-child(5) { transition-delay: .47s; }
+/* panel central: texto */
+.lu-trama .lut-centro {
+  position: absolute; left: 34.6%; width: 30.8%; top: 29%; bottom: 13%; z-index: 4;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+/* título · tres versiones: lut-cab-1 (gota), lut-cab-2 (lápida), lut-cab-3 (sangrado) */
+.lu-trama .lut-cab { display: flex; flex-direction: column; align-items: center; width: 100%; }
+.lu-trama .lut-t-ultima, .lu-trama .lut-t-gota {
+  display: block; font-family: 'Lordish', serif !important;
+  font-size: 54px !important; line-height: .75 !important;
+  color: #e4d9c6 !important;
+  background: linear-gradient(100deg, #e4d9c6 0%, #e4d9c6 38%, var(--carmin, #9e1f1a) 47%, var(--granate, #5a0b0b) 51%, var(--carmin, #9e1f1a) 55%, #e4d9c6 64%, #e4d9c6 100%) !important;
+  background-size: 260% 100% !important;
+  -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px #00000099);
+  animation: lut-brasa 8s ease-in-out infinite;
+}
+.lu-trama .lut-t-gota { animation-delay: .6s; }
+@keyframes lut-brasa { 0% { background-position: 100% 0; } 55%, 100% { background-position: 0 0; } }
+.lu-trama .lut-t-la {
+  display: block; font-style: italic; font-size: 19px !important; line-height: 1 !important;
+  color: var(--vitral, #d4553f) !important; margin-bottom: 2px !important;
+}
+/* 2 · lápida: "la" y "gota" en versalitas entre filetes */
+.lu-trama .lut-cab-2 .lut-t-la, .lu-trama .lut-cab-2 .lut-t-gota {
+  display: flex; align-items: center; gap: 10px; width: 78%;
+  font-family: 'Cormorant Garamond', Georgia, serif !important; font-style: normal; font-weight: 600;
+  font-size: 11px !important; line-height: 1 !important; letter-spacing: .6em; text-transform: uppercase;
+  color: #cbbda6 !important; -webkit-text-fill-color: #cbbda6; animation: none; filter: none;
+  background: none !important; margin: 6px 0 !important;
+}
+.lu-trama .lut-cab-2 .lut-t-la::before, .lu-trama .lut-cab-2 .lut-t-la::after,
+.lu-trama .lut-cab-2 .lut-t-gota::before, .lu-trama .lut-cab-2 .lut-t-gota::after {
+  content: ''; flex: 1; height: 1px; background: #e9dfcf4d;
+}
+.lu-trama .lut-cab-2 .lut-t-ultima { font-size: 50px !important; }
+/* 3 · sangrado: "la última" en cursiva, "Gota" enorme que se tiñe hacia abajo */
+.lu-trama .lut-cab-3 .lut-t-la, .lu-trama .lut-cab-3 .lut-t-ultima { display: inline; }
+.lu-trama .lut-cab-3 { flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 0 6px; }
+.lu-trama .lut-cab-3 .lut-t-ultima {
+  font-family: 'Cormorant Garamond', Georgia, serif !important; font-style: italic; text-transform: lowercase;
+  font-size: 19px !important; line-height: 1 !important;
+  color: var(--vitral, #d4553f) !important; -webkit-text-fill-color: var(--vitral, #d4553f);
+  background: none !important; animation: none; filter: none;
+}
+.lu-trama .lut-cab-3 .lut-t-gota {
+  flex-basis: 100%; text-align: center;
+  font-size: 66px !important; line-height: .9 !important;
+  background: linear-gradient(180deg, #e4d9c6 0%, #e4d9c6 42%, var(--carmin, #9e1f1a) 78%, var(--granate, #5a0b0b) 100%) !important;
+  background-size: 100% 100% !important; animation: none;
+  -webkit-background-clip: text !important; background-clip: text !important;
+}
+/* la gota del separador */
+.lu-trama .lut-gota {
+  position: relative; display: block; width: 9px; height: 9px; flex: none;
+  border-radius: 0 50% 50% 50% !important;
+  background: linear-gradient(135deg, var(--carmin, #9e1f1a) 0%, var(--granate, #5a0b0b) 100%) !important;
+  transform: rotate(45deg);
+  box-shadow: 0 0 8px #00000099 !important;
+}
+.lu-trama .lut-cab-1 + .lut-orla .lut-gota { animation: lut-cae 6s cubic-bezier(.55, 0, .7, .4) infinite; }
+@keyframes lut-cae {
+  0% { transform: translateY(-30px) rotate(45deg) scale(.2); opacity: 0; }
+  18% { transform: translateY(-30px) rotate(45deg) scale(1); opacity: 1; }
+  40% { transform: translateY(0) rotate(45deg) scale(1); opacity: 1; }
+  44% { transform: translateY(0) rotate(45deg) scale(1.25, .8); }
+  50%, 88% { transform: translateY(0) rotate(45deg) scale(1); opacity: 1; }
+  100% { transform: translateY(0) rotate(45deg) scale(1); opacity: 0; }
+}
+.lu-trama .lut-cab-3 + .lut-orla .lut-gota { animation: lut-late 2.4s ease-in-out infinite; }
+@keyframes lut-late { 0%, 100% { transform: rotate(45deg) scale(1); } 15% { transform: rotate(45deg) scale(1.25); } 30% { transform: rotate(45deg) scale(1); } }
+.lu-trama .lut-orla { display: flex; align-items: center; gap: 8px; width: 82%; margin: 14px 0 12px !important; }
+.lu-trama .lut-orla span { flex: 1; height: 1px; background: #e9dfcf40 !important; }
+.lu-trama .lut-orla em {
+  font-style: normal; font-size: 13px !important; line-height: 1 !important; color: var(--vitral, #d4553f) !important;
+}
+.lu-trama .lut-texto {
+  flex: 1; min-height: 0; width: 100%; overflow-y: auto;
+  padding: 0 7px 22px 3px !important;
+  text-align: justify; hyphens: none; text-wrap: pretty;
+  font-size: 16px !important; line-height: 1.35 !important;
+  -webkit-mask-image: linear-gradient(#000000 0%, #000000 88%, #00000000 100%);
+  mask-image: linear-gradient(#000000 0%, #000000 88%, #00000000 100%);
+  scrollbar-width: none; -ms-overflow-style: none;
+}
+.lu-trama .lut-texto::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.lu-trama .lut-texto p:first-child::first-line { font-variant: small-caps; letter-spacing: .05em; }
+/* capítulos: solo numerales */
+.lu-trama .lut-caps { flex: none; width: 100%; margin-top: 8px !important; }
+.lu-trama .lut-caps-tit {
+  display: flex; align-items: center; gap: 10px;
+  font-family: 'Cormorant Garamond', Georgia, serif !important; font-weight: 600;
+  font-size: 9.5px !important; letter-spacing: .5em; text-transform: uppercase; line-height: 1 !important;
+  color: #a8998a !important; margin-bottom: 8px !important;
+}
+.lu-trama .lut-caps-tit::before, .lu-trama .lut-caps-tit::after { content: ''; flex: 1; height: 1px; background: #e9dfcf33; }
+.lu-trama .lut-caps ul { display: flex !important; justify-content: center; gap: 4px; }
+.lu-trama .lut-caps li { display: block; }
+.lu-trama .lut-caps a {
+  position: relative; display: block !important; min-width: 34px; padding: 2px 6px 12px !important;
+  border-bottom: 0 !important; text-align: center;
+  font-family: 'Cormorant Garamond', Georgia, serif !important; font-weight: 500;
+  font-size: 19px !important; line-height: 1 !important; letter-spacing: .08em;
+  color: var(--tinta, #e9dfcf) !important;
+  transition: color .4s ease, transform .4s ease;
+}
+.lu-trama .lut-caps a::after {
+  content: ''; position: absolute; left: 50%; bottom: 2px; width: 6px; height: 6px; margin-left: -3px;
+  border-radius: 0 50% 50% 50%;
+  background: linear-gradient(135deg, var(--carmin, #9e1f1a), var(--granate, #5a0b0b));
+  transform: translateY(-6px) rotate(45deg) scale(.4); opacity: 0;
+  transition: transform .5s cubic-bezier(.55, 0, .7, .4), opacity .3s ease;
+}
+.lu-trama .lut-caps a:hover { color: var(--carmin, #9e1f1a) !important; transform: translateY(-2px); }
+.lu-trama .lut-caps a:hover::after { transform: translateY(0) rotate(45deg) scale(1); opacity: 1; }
+.lu-trama .lut-caps .lut-nuevo a { color: #e9dfcf40 !important; pointer-events: none; }
+.lu-trama .lut-capitular {
+  float: left !important;
+  font-family: 'Lordish', serif !important;
+  font-size: 70px !important; line-height: 1 !important;
+  margin: -4px 6px -10px 0 !important; padding: 8px 6px 6px 3px !important;
+  color: var(--vitral, #d4553f) !important;
+  background: linear-gradient(180deg, var(--carmin, #9e1f1a) 0%, #7a1414 45%, var(--granate, #5a0b0b) 75%, #2e0505 100%) !important;
+  -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 1px #e4d9c64d) drop-shadow(0 3px 8px #000000cc);
+}
+
+
+/* ── Tablilla de post · arco con calavera ── raíz: .lu-post · prefijo: lup- */
+
+.lu-post div, .lu-post span, .lu-post p, .lu-post img, .lu-post a, .lu-post strong, .lu-post b, .lu-post em, .lu-post i, .lu-post u {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-indent: 0;
+  text-shadow: none;
+}
+.lu-post, .lu-post * {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  float: none;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.lu-post {
+  position: relative;
+  width: 100% !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: none !important;
+  color: var(--tinta, #ece2d0) !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: 15.5px !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+}
+.lu-post p { margin: 0 0 .9em !important; padding: 0 !important; }
+/* formato del texto: los colores se cambian en el style de la raíz */
+.lu-post strong, .lu-post b { color: var(--negrita, #e9b7a6) !important; font-weight: 700 !important; }
+.lu-post em, .lu-post i { font-style: italic !important; color: var(--cursiva, #d8cbb7) !important; }
+.lu-post u {
+  text-decoration: underline !important; text-decoration-color: var(--subrayado, #9e1f1a) !important;
+  text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-style: solid;
+}
+.lu-post a {
+  color: var(--enlace, #e9b7a6) !important; text-decoration: none !important;
+  border-bottom: 1px dotted var(--subrayado, #9e1f1a) !important; padding-bottom: 0 !important;
+  transition: color .4s ease, border-color .4s ease;
+}
+.lu-post a:hover { color: #ffffff !important; border-bottom-style: solid !important; }
+
+/* escenario: misma proporción que el marco (1035×1520) */
+.lu-post .lup-stage { position: relative; width: 100%; aspect-ratio: 1035 / 1520; }
+
+.lu-post .lup-marco {
+  position: absolute; left: 0; top: 0;
+  width: 100% !important; height: 100% !important; max-width: none !important;
+  z-index: 3; pointer-events: none;
+  filter: var(--marco, grayscale(1) brightness(.35) contrast(1.5));
+}
+
+/* fondo: el cielo, recortado a la forma del arco
+   acepta --fx --fy (encuadre, 0% a 100%) y --fz (zoom) en el style de .lup-fondo */
+.lu-post .lup-fondo {
+  position: absolute; left: 11.2%; top: 11%; width: 77.5%; height: 85.3%; z-index: 1; overflow: hidden;
+  clip-path: polygon(0 100%, 0 21.8%, 1.2% 19.4%, 3.5% 17%, 7% 12.2%, 11.2% 7.4%, 16.5% 5%, 26.8% 2.4%, 33.6% .4%, 66.4% .4%, 73.6% 2.4%, 83.4% 5%, 88.8% 7.4%, 92.2% 9.8%, 96% 14.6%, 98.7% 19.4%, 100% 21.8%, 100% 100%);
+}
+.lu-post .lup-fondo img {
+  position: absolute; left: -2%; top: -2%;
+  display: block; width: 104% !important; height: 104% !important; max-width: none !important;
+  object-fit: cover; object-position: var(--fx, 50%) var(--fy, 50%);
+  transform-origin: var(--fx, 50%) var(--fy, 50%); transform: scale(var(--fz, 1));
+  -webkit-user-drag: none; user-select: none;
+  animation: lup-nubes 40s ease-in-out infinite alternate;
+}
+@keyframes lup-nubes { 0% { translate: 0 0; } 100% { translate: -1.5% .8%; } }
+.lu-post .lup-velo {
+  position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% 45%, var(--velo, #0b0505b3) 0%, #0b050566 60%, #00000000 100%),
+    linear-gradient(180deg, #00000000 0%, #00000000 55%, #050202cc 100%) !important;
+}
+
+/* círculo superior: imagen
+   acepta --x --y (encuadre) y --z (zoom) en el style de .lup-luna */
+.lu-post .lup-luna {
+  position: absolute; left: 37.1%; top: 2.75%; width: 25.6%; aspect-ratio: 1; z-index: 2;
+  border-radius: 50% !important; overflow: hidden;
+}
+.lu-post .lup-luna img {
+  display: block; width: 100% !important; height: 100% !important; max-width: none !important;
+  object-fit: cover; object-position: var(--x, 50%) var(--y, 50%);
+  transform-origin: var(--x, 50%) var(--y, 50%); transform: scale(var(--z, 1));
+  filter: grayscale(1) contrast(1.15) brightness(.9);
+  -webkit-user-drag: none; user-select: none;
+  transition: transform 1.6s cubic-bezier(.16, .8, .2, 1), filter 1.2s ease;
+}
+.lu-post .lup-tinte {
+  position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+  background: var(--tinte, #7a1616);
+  mix-blend-mode: multiply;
+  transition: opacity 1.2s ease;
+}
+.lu-post .lup-sombra {
+  position: absolute; left: 0; top: 0; right: 0; bottom: 0; border-radius: 50% !important;
+  box-shadow: inset 0 0 26px #000000e6 !important;
+}
+.lu-post .lup-luna-nombre {
+  position: absolute; left: 0; top: 0; right: 0; bottom: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 12% !important;
+  font-family: 'Lordish', serif !important; font-size: 28px !important; line-height: 1 !important;
+  color: #f3eadb !important; letter-spacing: .3em;
+  opacity: 0; filter: blur(6px) drop-shadow(0 2px 6px #000000);
+  transition: opacity .9s ease, filter .9s ease, letter-spacing 1.2s cubic-bezier(.16, .8, .2, 1);
+}
+.lu-post .lup-luna:hover img { transform: scale(calc(var(--z, 1) * 1.1)); filter: grayscale(1) contrast(1.1) brightness(.55) blur(3px); }
+.lu-post .lup-luna:hover .lup-tinte { opacity: 0; }
+.lu-post .lup-luna:hover .lup-luna-nombre { opacity: 1; filter: blur(0) drop-shadow(0 2px 6px #000000); letter-spacing: .02em; }
+
+/* cuerpo del post */
+.lu-post .lup-cuerpo {
+  position: absolute; left: 15.6%; width: 68.8%; top: 22.3%; bottom: 11%; z-index: 4;
+  display: flex; flex-direction: column; align-items: center;
+}
+/* título: nombre en Lordish tallado, apellido en cursiva que se le cuelga */
+.lu-post .lup-nombre {
+  position: relative; display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding-top: 4px !important;
+}
+.lu-post .lup-nombre::before {
+  content: ''; position: absolute; left: 50%; top: 50%; width: 120%; height: 160%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, #3a0808a6 0%, #00000000 65%);
+  pointer-events: none; z-index: -1;
+}
+.lu-post .lup-n1 {
+  display: block; font-family: 'Lordish', serif !important;
+  font-size: 58px !important; line-height: .95 !important;
+  color: #ece2d0 !important;
+  background: linear-gradient(100deg, #b9ab97 0%, #f3eadb 30%, #ffffff 46%, #f3eadb 54%, #b9ab97 80%, #8c7a6a 100%) !important;
+  background-size: 240% 100% !important;
+  -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 0 #00000099) drop-shadow(0 4px 12px #000000d9);
+  animation: lup-luz 9s ease-in-out infinite;
+}
+@keyframes lup-luz { 0% { background-position: 100% 0; } 50%, 100% { background-position: 0 0; } }
+.lu-post .lup-n2 {
+  display: flex; align-items: center; gap: 10px; margin-top: 2px !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important; font-style: italic; font-weight: 500;
+  font-size: 21px !important; line-height: 1 !important; letter-spacing: .06em;
+  color: #cdb9a8 !important;
+  text-shadow: 0 2px 6px #000000cc;
+}
+.lu-post .lup-n2::before, .lu-post .lup-n2::after { content: ''; width: 28px; height: 1px; background: linear-gradient(90deg, #00000000, #cdb9a880); }
+.lu-post .lup-n2::after { background: linear-gradient(90deg, #cdb9a880, #00000000); }
+/* la gota: cae desde el título, golpea y abre las líneas */
+.lu-post .lup-orla { display: flex; justify-content: center; align-items: flex-end; width: 70%; height: 44px; margin: 0 0 14px !important; }
+.lu-post .lup-caida { position: relative; display: block; width: 14px; height: 44px; flex: none; }
+.lu-post .lup-caida::before {
+  content: ''; position: absolute; left: 50%; top: 0; width: 1px; height: 30px; margin-left: -.5px;
+  background: linear-gradient(#00000000, var(--gota, #6e1010));
+  transform-origin: top center; animation: lup-hilo 5s ease-in infinite;
+}
+.lu-post .lup-caida::after {
+  content: ''; position: absolute; left: 50%; bottom: 4px; width: 30px; height: 8px; margin-left: -15px;
+  border: 1px solid var(--gota, #6e1010); border-radius: 50%;
+  opacity: 0; animation: lup-onda 5s ease-out infinite;
+}
+.lu-post .lup-gota {
+  position: absolute; left: 0; bottom: 0; display: block; width: 14px; height: 14px;
+  border-radius: 0 50% 50% 50% !important;
+  background: radial-gradient(circle at 62% 62%, #8a2620 0%, var(--gota, #6e1010) 38%, #240303 100%) !important;
+  box-shadow: 0 0 10px #5a0b0b66, inset -2px -2px 3px #00000080 !important;
+  animation: lup-cae 5s cubic-bezier(.55, 0, .8, .3) infinite;
+}
+.lu-post .lup-gota::after {
+  content: ''; position: absolute; left: 7px; top: 7px; width: 3px; height: 3px; border-radius: 50%;
+  background: #ffffff4d;
+}
+@keyframes lup-cae {
+  0% { transform: translateY(-34px) rotate(45deg) scale(.2); opacity: 0; }
+  20% { transform: translateY(-34px) rotate(45deg) scale(.9); opacity: 1; }
+  30% { transform: translateY(-32px) rotate(45deg) scale(1, 1.15); }
+  48% { transform: translateY(0) rotate(45deg) scale(1); }
+  52% { transform: translateY(0) rotate(45deg) scale(1.35, .7); }
+  60%, 86% { transform: translateY(0) rotate(45deg) scale(1); opacity: 1; }
+  100% { transform: translateY(0) rotate(45deg) scale(1); opacity: 0; }
+}
+@keyframes lup-hilo {
+  0%, 18% { transform: scaleY(0); opacity: 0; }
+  30% { transform: scaleY(.25); opacity: 1; }
+  48% { transform: scaleY(1); opacity: 1; }
+  70%, 100% { transform: scaleY(1); opacity: 0; }
+}
+@keyframes lup-onda {
+  0%, 49% { transform: scale(.2); opacity: 0; }
+  52% { opacity: .9; }
+  80%, 100% { transform: scale(2.2); opacity: 0; }
+}
+.lu-post .lup-texto {
+  flex: 1; min-height: 0; width: 78%; overflow-y: auto;
+  padding: 0 2px 24px !important;
+  text-align: justify; hyphens: none; text-wrap: pretty;
+  font-size: 16.5px !important; line-height: 1.55 !important;
+  -webkit-mask-image: linear-gradient(#000000 0%, #000000 88%, #00000000 100%);
+  mask-image: linear-gradient(#000000 0%, #000000 88%, #00000000 100%);
+  scrollbar-width: none; -ms-overflow-style: none;
+  text-shadow: 0 1px 3px #000000cc;
+}
+.lu-post .lup-texto::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.lu-post .lup-texto::first-line { font-variant: small-caps; letter-spacing: .05em; }
+.lu-post .lup-capitular {
+  float: left !important;
+  font-family: 'Lordish', serif !important;
+  font-size: 64px !important; line-height: 1 !important;
+  margin: -4px 6px -10px 0 !important; padding: 8px 6px 6px 3px !important;
+  color: var(--tinta, #ece2d0) !important;
+  background: linear-gradient(180deg, #f3eadb 0%, #d9ccb8 45%, #8c7a6a 100%) !important;
+  -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 3px 8px #000000e6);
+  text-shadow: none;
+}
