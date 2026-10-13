@@ -392,6 +392,7 @@
 .lu-post .lup-fondo {
   position: absolute; left: 11.2%; top: 11%; width: 77.5%; height: 85.3%; z-index: 1; overflow: hidden;
   clip-path: polygon(0 100%, 0 21.8%, 1.2% 19.4%, 3.5% 17%, 7% 12.2%, 11.2% 7.4%, 16.5% 5%, 26.8% 2.4%, 33.6% .4%, 66.4% .4%, 73.6% 2.4%, 83.4% 5%, 88.8% 7.4%, 92.2% 9.8%, 96% 14.6%, 98.7% 19.4%, 100% 21.8%, 100% 100%);
+  background-color:#191919;
 }
 .lu-post .lup-fondo img {
   position: absolute; left: -2%; top: -2%;
