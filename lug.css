@@ -400,6 +400,7 @@
   transform-origin: var(--fx, 50%) var(--fy, 50%); transform: scale(var(--fz, 1));
   -webkit-user-drag: none; user-select: none;
   animation: lup-nubes 40s ease-in-out infinite alternate;
+    opacity:0.5;
 }
 @keyframes lup-nubes { 0% { translate: 0 0; } 100% { translate: -1.5% .8%; } }
 .lu-post .lup-velo {
