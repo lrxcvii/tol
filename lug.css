@@ -301,13 +301,13 @@
   color: #a8998a !important; margin-bottom: 8px !important;
 }
 .lu-trama .lut-caps-tit::before, .lu-trama .lut-caps-tit::after { content: ''; flex: 1; height: 1px; background: #e9dfcf33; }
-.lu-trama .lut-caps ul { display: flex !important; justify-content: center; gap: 4px; }
-.lu-trama .lut-caps li { display: block; }
-.lu-trama .lut-caps a {
+.lu-trama.lu-trama .lut-caps-lista { display: flex !important; justify-content: center; align-items: flex-end; gap: 4px; width: 100% !important; margin: 0 !important; padding: 0 !important; text-indent: 0 !important; text-align: center !important; }
+.lu-trama.lu-trama .lut-caps a {
   position: relative; display: block !important; min-width: 34px; padding: 2px 6px 12px !important;
-  border-bottom: 0 !important; text-align: center;
-  font-family: 'Cormorant Garamond', Georgia, serif !important; font-weight: 500;
-  font-size: 19px !important; line-height: 1 !important; letter-spacing: .08em;
+  border: 0 !important; text-align: center; text-decoration: none !important; text-transform: none !important;
+  font-family: 'Cormorant Garamond', Georgia, serif !important; font-weight: 500 !important; font-style: normal !important;
+  font-size: 19px !important; line-height: 1 !important; letter-spacing: .08em !important;
+  background: none !important; box-shadow: none !important; text-shadow: none !important;
   color: var(--tinta, #e9dfcf) !important;
   transition: color .4s ease, transform .4s ease;
 }
@@ -318,9 +318,9 @@
   transform: translateY(-6px) rotate(45deg) scale(.4); opacity: 0;
   transition: transform .5s cubic-bezier(.55, 0, .7, .4), opacity .3s ease;
 }
-.lu-trama .lut-caps a:hover { color: var(--carmin, #9e1f1a) !important; transform: translateY(-2px); }
+.lu-trama.lu-trama .lut-caps a:hover { color: var(--carmin, #9e1f1a) !important; text-decoration: none !important; transform: translateY(-2px); }
 .lu-trama .lut-caps a:hover::after { transform: translateY(0) rotate(45deg) scale(1); opacity: 1; }
-.lu-trama .lut-caps .lut-nuevo a { color: #e9dfcf40 !important; pointer-events: none; }
+.lu-trama.lu-trama .lut-caps a.lut-nuevo { color: #e9dfcf40 !important; pointer-events: none; }
 .lu-trama .lut-capitular {
   float: left !important;
   font-family: 'Lordish', serif !important;
